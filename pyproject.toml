@@ -12,7 +12,7 @@ license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
 
 [project.urls]
-Home = "https://github.com/pyansys/pyansys-tools-report"
+home = "https://github.com/pyansys/pyansys-tools-report"
 
 [tool.flit.module]
 name = "pyansys.tools.report"

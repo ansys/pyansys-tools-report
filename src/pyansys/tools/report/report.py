@@ -1,6 +1,7 @@
-"""Module containing the standarized Report class for PyAnsys projects."""
+"""Module containing the standardized Report class for PyAnsys projects."""
 import os
 import sys
+
 import scooby
 
 

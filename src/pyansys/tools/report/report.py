@@ -70,13 +70,15 @@ class Report(scooby.Report):
             extra_meta=extra_meta,
         )
 
-    def project_info(self, ansys_libs):
+    def project_info(self, ansys_vars=None, ansys_libs=None):
         """Return information regarding the ansys environment and installation.
 
         Parameters
         ----------
+        ansys_vars : list of str
+            List containing the Ansys environment variables to be reported. (e.g. ["MYVAR_1", "MYVAR_2" ...])
         ansys_libs : dict {str : str}
-            Dictionary containing the Ansys libraries and versions to be reported. (e.g. {"MyLib" : "v1.2"})
+            Dictionary containing the Ansys libraries and versions to be reported. (e.g. {"MyLib" : "v1.2", ...})
 
         Returns
         -------
@@ -88,7 +90,7 @@ class Report(scooby.Report):
         lines = ["", "Ansys Environment Report", "-" * 79]
         lines = ["\n", "Ansys Installation", "******************"]
         if not ansys_libs:
-            lines.append("Unable to locate any Ansys installations")
+            lines.append("No Ansys installations provided")
         else:
             lines.append("Version   Location")
             lines.append("------------------")
@@ -102,7 +104,7 @@ class Report(scooby.Report):
         ]
         n_var = 0
         for key, value in os.environ.items():
-            if "AWP" in key or "CADOE" in key or "ANSYS" in key:
+            if key in ansys_vars:
                 env_info_lines.append(f"{key:<30} {value}")
                 n_var += 1
         if not n_var:

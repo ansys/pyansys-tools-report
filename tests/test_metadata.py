@@ -1,5 +1,5 @@
-from pyansys.tools.report import __version__
+import ansys.tools.report as report
 
 
 def test_pkg_version():
-    assert __version__ == "0.1.dev0"
+    assert report.version() == "0.1.dev0"

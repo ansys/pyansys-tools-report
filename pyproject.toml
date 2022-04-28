@@ -15,4 +15,4 @@ classifiers = ["License :: OSI Approved :: MIT License"]
 home = "https://github.com/pyansys/pyansys-tools-report"
 
 [tool.flit.module]
-name = "pyansys.tools.report"
+name = "ansys.tools.report"

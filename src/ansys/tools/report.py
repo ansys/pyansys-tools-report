@@ -1,9 +1,29 @@
-"""Module containing the standardized Report class for PyAnsys projects."""
+"""
+PyAnsys Tools Report
+
+Module containing the standardized Report class for PyAnsys projects.
+"""
 import os
 import sys
 
 import scooby
 
+try:
+    import importlib.metadata as importlib_metadata
+except ModuleNotFoundError:
+    import importlib_metadata
+
+__version__ = importlib_metadata.version("pyansys-tools-report")
+
+def version():
+    """Method to return the version of the PyAnsys Report Tool.
+
+    Returns
+    -------
+    str
+        The version of the tool being used.
+    """
+    return __version__
 
 class Report(scooby.Report):
     """A class for custom scooby.Report."""

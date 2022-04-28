@@ -15,6 +15,7 @@ except ModuleNotFoundError:
 
 __version__ = importlib_metadata.version("pyansys-tools-report")
 
+
 def version():
     """Method to return the version of the PyAnsys Report Tool.
 
@@ -24,6 +25,7 @@ def version():
         The version of the tool being used.
     """
     return __version__
+
 
 class Report(scooby.Report):
     """A class for custom scooby.Report."""

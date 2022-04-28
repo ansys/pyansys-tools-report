@@ -8,8 +8,18 @@ import scooby
 class Report(scooby.Report):
     """A class for custom scooby.Report."""
 
-    def __init__(self, additional=None, ncol=3, text_width=80, sort=False, gpu=True):
+    def __init__(
+        self,
+        additional=None,
+        ncol=3,
+        text_width=80,
+        sort=False,
+        gpu=True,
+        ansys_vars=None,
+        ansys_libs=None,
+    ):
         """Generate a :class:`scooby.Report` instance.
+
         Parameters
         ----------
         additional : list(ModuleType), list(str)
@@ -18,13 +28,19 @@ class Report(scooby.Report):
             Number of package-columns in html table; only has effect if
             ``mode='HTML'`` or ``mode='html'``. Defaults to 3.
         text_width : int, optional
-            The text width for non-HTML display modes
+            The text width for non-HTML display modes. Defaults to 80.
         sort : bool, optional
-            Alphabetically sort the packages
-        gpu : bool
+            Alphabetically sort the packages. Defaults to ``False``.
+        gpu : bool, optional
             Gather information about the GPU. Defaults to ``True`` but if
             experiencing renderinng issues, pass ``False`` to safely generate
             a report.
+        ansys_vars : list of str, optional
+            List containing the Ansys environment variables to be reported.
+            (e.g. ["MYVAR_1", "MYVAR_2" ...]). Defaults to None.
+        ansys_libs : dict {str : str}, optional
+            Dictionary containing the Ansys libraries and versions to be reported.
+            (e.g. {"MyLib" : "v1.2", ...}). Defaults to None.
         """
         # Mandatory packages
         core = [
@@ -59,6 +75,10 @@ class Report(scooby.Report):
         else:
             extra_meta = ("GPU Details", "None")
 
+        # Store the ANSYS vars and libs
+        self._ansys_vars = ansys_vars
+        self._ansys_libs = ansys_libs
+
         scooby.Report.__init__(
             self,
             additional=additional,
@@ -70,15 +90,8 @@ class Report(scooby.Report):
             extra_meta=extra_meta,
         )
 
-    def project_info(self, ansys_vars=None, ansys_libs=None):
+    def project_info(self):
         """Return information regarding the ansys environment and installation.
-
-        Parameters
-        ----------
-        ansys_vars : list of str
-            List containing the Ansys environment variables to be reported. (e.g. ["MYVAR_1", "MYVAR_2" ...])
-        ansys_libs : dict {str : str}
-            Dictionary containing the Ansys libraries and versions to be reported. (e.g. {"MyLib" : "v1.2", ...})
 
         Returns
         -------
@@ -89,13 +102,13 @@ class Report(scooby.Report):
         # List installed Ansys
         lines = ["", "Ansys Environment Report", "-" * 79]
         lines = ["\n", "Ansys Installation", "******************"]
-        if not ansys_libs:
+        if not self._ansys_libs:
             lines.append("No Ansys installations provided")
         else:
             lines.append("Version   Location")
             lines.append("------------------")
-            for key in sorted(ansys_libs.keys()):
-                lines.append(f"{key}       {ansys_libs[key]}")
+            for key in sorted(self._ansys_libs.keys()):
+                lines.append(f"{key}       {self._ansys_libs[key]}")
         install_info = "\n".join(lines)
 
         env_info_lines = [
@@ -103,10 +116,11 @@ class Report(scooby.Report):
             "***************************",
         ]
         n_var = 0
-        for key, value in os.environ.items():
-            if key in ansys_vars:
-                env_info_lines.append(f"{key:<30} {value}")
-                n_var += 1
+        if self._ansys_libs:
+            for key, value in os.environ.items():
+                if key in self._ansys_vars:
+                    env_info_lines.append(f"{key:<30} {value}")
+                    n_var += 1
         if not n_var:
             env_info_lines.append("None")
         env_info = "\n".join(env_info_lines)

@@ -44,8 +44,9 @@ class Report(scooby.Report):
 
         Parameters
         ----------
-        additional : list(ModuleType), list(str)
+        additional : list(ModuleType), list(str), optional
             List of packages or package names to add to output information.
+            Defaults to ``None``.
         ncol : int, optional
             Number of package-columns in html table; only has effect if
             ``mode='HTML'`` or ``mode='html'``. Defaults to 3.
@@ -55,14 +56,14 @@ class Report(scooby.Report):
             Alphabetically sort the packages. Defaults to ``False``.
         gpu : bool, optional
             Gather information about the GPU. Defaults to ``True`` but if
-            experiencing renderinng issues, pass ``False`` to safely generate
+            experiencing rendering issues, pass ``False`` to safely generate
             a report.
         ansys_vars : list of str, optional
             List containing the Ansys environment variables to be reported.
-            (e.g. ["MYVAR_1", "MYVAR_2" ...]). Defaults to None.
+            (e.g. ["MYVAR_1", "MYVAR_2" ...]). Defaults to ``None``.
         ansys_libs : dict {str : str}, optional
             Dictionary containing the Ansys libraries and versions to be reported.
-            (e.g. {"MyLib" : "v1.2", ...}). Defaults to None.
+            (e.g. {"MyLib" : "v1.2", ...}). Defaults to ``None``.
         """
         # Mandatory packages
         core = [
@@ -113,7 +114,7 @@ class Report(scooby.Report):
         )
 
     def project_info(self):
-        """Return information regarding the ansys environment and installation.
+        """Return information regarding the Ansys environment and installation.
 
         Returns
         -------

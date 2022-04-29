@@ -123,8 +123,8 @@ class Report(scooby.Report):
         """
 
         # List installed Ansys
-        lines = ["", "Ansys Environment Report", "-" * 79]
-        lines = ["\n", "Ansys Installation", "******************"]
+        lines = ["", "Ansys Environment Report", "-" * 79, "\n"]
+        lines.append("\n".join(["Ansys Installation", "******************"]))
         if not self._ansys_libs:
             lines.append("No Ansys installations provided")
         else:

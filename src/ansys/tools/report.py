@@ -55,7 +55,7 @@ class Report(scooby.Report):
             Alphabetically sort the packages. Defaults to ``False``.
         gpu : bool, optional
             Gather information about the GPU. Defaults to ``True`` but if
-            experiencing renderinng issues, pass ``False`` to safely generate
+            experiencing rendering issues, pass ``False`` to safely generate
             a report.
         ansys_vars : list of str, optional
             List containing the Ansys environment variables to be reported.

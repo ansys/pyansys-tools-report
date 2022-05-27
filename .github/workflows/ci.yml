@@ -80,7 +80,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/pip
-          key: Python-${{ runner.os }}-${{ matrix.python-version }}
+          key: Python-${{ runner.os }}-${{ python-version }}
 
       - name: Install packages for testing
         run: |
@@ -116,7 +116,7 @@ jobs:
         if: ${{ runner.os == 'Linux' }}
         with:
           path: ~/.cache/pip
-          key: Python-${{ runner.os }}-${{ matrix.python-version }}
+          key: Python-${{ runner.os }}-${{ python-version }}
 
       - name: Install packages for doc build
         run: |

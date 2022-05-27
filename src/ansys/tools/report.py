@@ -139,7 +139,7 @@ class Report(scooby.Report):
             "***************************",
         ]
         n_var = 0
-        if self._ansys_libs:
+        if self._ansys_vars is not None :
             for key, value in os.environ.items():
                 if key in self._ansys_vars:
                     env_info_lines.append(f"{key:<30} {value}")

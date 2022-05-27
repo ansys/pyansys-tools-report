@@ -130,3 +130,6 @@ dmypy.json
 
 # Coverage results
 .cov
+
+# VSCode folders
+.vscode

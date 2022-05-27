@@ -147,3 +147,22 @@ MYVAR_2                        VAL_2"""
 
     # Assert that the report is properly generated
     assert rep.project_info() == str_report
+
+
+def test_create_ansys_repr():
+    """Test the creation of a Report and its correct output
+    when directly calling the object."""
+
+    # Let us start by creating a "default" Report
+    str_rep = report.Report().__repr__()
+
+    # Define the comparison strings
+    str_start = "-" * 79 + "\nPyAnsys Software and Environment Report"
+    str_end = """
+Ansys Environment Variables
+***************************
+None"""
+
+    # Validate the start and end of the report
+    assert str_rep.startswith(str_start)
+    assert str_rep.endswith(str_end)

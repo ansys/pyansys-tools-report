@@ -22,6 +22,7 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     'pytest>=7.1.0',
+    'pytest-cov>=3.0.0',
 ]
 doc = [
     "Sphinx>=4.4",
@@ -35,3 +36,10 @@ home = "https://github.com/pyansys/pyansys-tools-report"
 
 [tool.flit.module]
 name = "ansys.tools.report"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q -v --cov=ansys.tools.report --cov-report term"
+testpaths = [
+    "tests",
+]

@@ -18,10 +18,10 @@ jobs:
     name: Style Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@latest
+      - uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v3
         with:
           python-version: 3.9
 
@@ -40,15 +40,15 @@ jobs:
         python-version: ["3.7", "3.8", "3.9", "3.10"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Linux pip cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         if: ${{ runner.os == 'Linux' }}
         with:
           path: ~/.cache/pip
@@ -72,15 +72,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: 3.9
 
       - name: Cache pip
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.cache/pip
           key: Python-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('setup.py') }}-${{ hashFiles('requirements/requirements_*.txt') }}
@@ -96,7 +96,7 @@ jobs:
           pytest --cov-report html:.cov/html
 
       - name: Upload Coverage Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: HTML-Coverage
           path: .cov/html
@@ -109,15 +109,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: 3.9
 
       - name: Linux pip cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         if: ${{ runner.os == 'Linux' }}
         with:
           path: ~/.cache/pip
@@ -134,7 +134,7 @@ jobs:
           make -C doc html
 
       - name: Upload documentation
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: HTML-Documentation
           path: doc/_build/html
@@ -161,7 +161,7 @@ jobs:
         with:
           python-version: 3.9
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
 
       - name: Display structure of downloaded files
         run: ls -R

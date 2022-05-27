@@ -1,7 +1,8 @@
-import ansys.tools.report as report
 import multiprocessing
-import platform
 import os
+import platform
+
+import ansys.tools.report as report
 
 
 def test_create_ansys_report_empty():

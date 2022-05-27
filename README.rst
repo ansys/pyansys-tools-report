@@ -10,15 +10,18 @@ Pyproduct library
    :alt: PyAnsys
 
 .. |python| image:: https://img.shields.io/badge/Python-%3E%3D3.7-blue
-   :target: https://pypi.org/project/pyproduct-library/
+   :target: https://pypi.org/project/pyansys-tools-report/
    :alt: Python
 
-.. |pypi| image:: https://img.shields.io/pypi/v/pyproduct-library.svg?logo=python&logoColor=white
-   :target: https://pypi.org/project/pyproduct-library
+.. |pypi| image:: https://img.shields.io/pypi/v/pyansys-tools-report.svg?logo=python&logoColor=white
+   :target: https://pypi.org/project/pyansys-tools-report
    :alt: PyPI
 
-.. |GH-CI| image:: https://github.com/pyansys/pyproduct-library/actions/workflows/ci.yml/badge.svg
-   :target: https://github.com/pyansys/pyproduct-library/actions/workflows/ci.yml
+.. |codecov| image:: https://codecov.io/gh/pyansys/pyansys-tools-report/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/pyansys/pyansys-tools-report
+
+.. |GH-CI| image:: https://github.com/pyansys/pyansys-tools-report/actions/workflows/ci.yml/badge.svg
+   :target: https://github.com/pyansys/pyansys-tools-report/actions/workflows/ci.yml
    :alt: GH-CI
 
 .. |MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg

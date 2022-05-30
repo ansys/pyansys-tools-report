@@ -1,0 +1,193 @@
+name: CI
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+
+env:
+  MAIN_PYTHON_VERSION: 3.9
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  style:
+    name: Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Run pre-commit
+        run: pre-commit run --all-files --show-diff-on-failure
+
+  test_import:
+    name: Smoke Tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python-version: ["3.7", "3.8", "3.9"]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Linux pip cache
+        uses: actions/cache@v3
+        if: ${{ runner.os == 'Linux' }}
+        with:
+          path: ~/.cache/pip
+          key: Python-${{ runner.os }}-${{ matrix.python-version }}
+
+      - name: Install pyansys-tools-report
+        run: |
+          pip install .
+
+      - name: Test import
+        run: |
+          python -c "import ansys.tools.report as report; report.version();"
+
+  build_test:
+    name: Build and Unit Testing
+    needs:
+      - test_import
+      - style
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: Python-${{ runner.os }}-${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Install packages for testing
+        run: |
+          pip install .[test]
+
+      - name: Unit Testing
+        run: |
+          pytest --cov-report html:.cov/html
+
+      - name: Upload Coverage Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: HTML-Coverage
+          path: .cov/html
+          retention-days: 7
+
+  build_doc:
+    name: Build Documentation
+    needs:
+      - build_test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Linux pip cache
+        uses: actions/cache@v3
+        if: ${{ runner.os == 'Linux' }}
+        with:
+          path: ~/.cache/pip
+          key: Python-${{ runner.os }}-${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Install packages for doc build
+        run: |
+          pip install .[doc]
+
+      - name: Build documentation
+        run: |
+          make -C doc html
+
+      - name: Upload documentation
+        uses: actions/upload-artifact@v3
+        with:
+          name: HTML-Documentation
+          path: doc/_build/html
+          retention-days: 7
+
+      - name: Deploy documentation to gh-pages
+        if: github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          token: ${{ secrets.github_token }}
+          branch: gh-pages
+          folder: doc/_build/html
+          clean: true
+          single-commit: true
+
+  release:
+    name: Release project
+    if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
+    needs: [build_doc, build_test, style]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - uses: actions/download-artifact@v3
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      - name: Upload to Public PyPi
+        run: |
+          pip install twine
+          twine upload --skip-existing ./**/*.whl
+          twine upload --skip-existing ./**/*.tar.gz
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ./**/*.whl
+            ./**/*.tar.gz
+            ./**/*.pdf
+            ./**/*.zip
+
+      - name: Notify if fail
+        uses: skitionek/notify-microsoft-teams@master
+        if: ${{ failure() }}
+        with:
+          webhook_url: ${{ secrets.TEAM_HOOK }}
+          needs: ${{ toJson(needs) }}
+          job: ${{ toJson(job) }}
+          steps: ${{ toJson(steps) }}
+          overwrite: "{
+            title: `Release FAILED!`,
+            }"

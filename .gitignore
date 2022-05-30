@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Coverage results
+.cov
+
+# VSCode folders
+.vscode

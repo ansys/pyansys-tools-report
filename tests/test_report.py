@@ -8,21 +8,21 @@ import ansys.tools.report as report
 def test_create_ansys_report_empty():
     """Test the creation of a Report and its correct output."""
 
-    # Let us start by creating a "default" Report
+    # Instantiate a "default" Report
     rep = report.Report()
 
-    # Let us assert some of its information
+    # Assert some of its information
     #
-    # 1) CPU Count
+    # CPU Count
     assert rep.cpu_count == multiprocessing.cpu_count()
-    # 2) Architecture
+    # Architecture
     assert rep.architecture == platform.architecture()[0]
-    # 3) OS
+    # OS
     assert rep.system == platform.system()
-    # 4) Machine
+    # Machine
     assert rep.machine == platform.machine()
 
-    # Let us assert the output of the project info (the one we can control)
+    # Assert the output of the project info (the one we can control)
     str_empty = """
 Ansys Environment Report
 -------------------------------------------------------------------------------
@@ -51,10 +51,10 @@ def test_create_ansys_report_with_libs():
         "MyLib2": "v1.3",
     }
 
-    # Let us create the Report
+    # Instantiate a Report object
     rep = report.Report(ansys_libs=my_ansys_libs)
 
-    # Let us assert the output of the project info (the one we can control)
+    # Assert the output of the project info (the one we can control)
     str_report = """
 Ansys Environment Report
 -------------------------------------------------------------------------------
@@ -85,10 +85,10 @@ def test_create_ansys_report_with_vars():
     os.environ["MYVAR_2"] = "VAL_2"
     my_ansys_vars = ["MYVAR_1", "MYVAR_2"]
 
-    # Let us create the Report
+    # Instantiate a Report object
     rep = report.Report(ansys_vars=my_ansys_vars)
 
-    # Let us assert the output of the project info (the one we can control)
+    # Assert the output of the project info (the one we can control)
     str_report = """
 Ansys Environment Report
 -------------------------------------------------------------------------------
@@ -123,10 +123,10 @@ def test_create_ansys_report_with_libs_and_vars():
     os.environ["MYVAR_2"] = "VAL_2"
     my_ansys_vars = ["MYVAR_1", "MYVAR_2"]
 
-    # Let us create the Report
+    # Instantiate a Report object
     rep = report.Report(ansys_libs=my_ansys_libs, ansys_vars=my_ansys_vars)
 
-    # Let us assert the output of the project info (the one we can control)
+    # Assert the output of the project info (the one we can control)
     str_report = """
 Ansys Environment Report
 -------------------------------------------------------------------------------

@@ -42,6 +42,7 @@ jobs:
       - name: Running Vale
         uses: errata-ai/vale-action@reviewdog
         with:
+          files: doc
           reporter: github-pr-check
           level: error
           filter_mode: nofilter

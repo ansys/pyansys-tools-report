@@ -16,9 +16,14 @@ html_logo = pyansys_logo_black
 html_theme = "pyansys_sphinx_theme"
 
 # specify the location of your github repo
+html_short_title = html_title = "PyAnsys Tools Report"
 html_theme_options = {
     "github_url": "https://github.com/pyansys/pyansys-tools-report",
     "show_prev_next": False,
+    "show_breadcrumbs": True,
+    "additional_breadcrumbs": [
+        ("PyAnsys", "https://docs.pyansys.com/"),
+    ],
 }
 
 # Sphinx extensions

@@ -1,7 +1,16 @@
-..
-   Just reuse the root readme to avoid duplicating the documentation.
-   Provide any documentation specific to your online documentation
-   here.
+********************
+PyAnsys Tools Report
+********************
 
+Ansys tool for reporting your Python environment's package versions and hardware resources in a standardized way.
 
-.. include:: ../../README.rst
+Contents
+--------
+
+.. toctree::
+   :maxdepth: 3
+
+   api/index
+   getting_started/index
+   user_guide/index
+   contributing

@@ -42,7 +42,6 @@ jobs:
       - name: Running Vale
         uses: errata-ai/vale-action@reviewdog
         with:
-          config: https://github.com/pyansys/pyansys-tools-report/tree/main/doc/.vale.ini
           reporter: github-pr-check
           level: error
           filter_mode: nofilter

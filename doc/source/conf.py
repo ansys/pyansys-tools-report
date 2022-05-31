@@ -68,6 +68,12 @@ numpydoc_validation_checks = {
     # type, unless multiple values are being returned"
 }
 
+# Favicon
+html_favicon = "favicon.png"
+
+# notfound.extension
+notfound_template = "404.rst"
+notfound_urls_prefix = "/../"
 
 # static path
 html_static_path = ["_static"]
@@ -80,3 +86,8 @@ source_suffix = ".rst"
 
 # The master toctree document.
 master_doc = "index"
+
+# Copy button customization ---------------------------------------------------
+# exclude traditional Python prompts from the copied code
+copybutton_prompt_text = r">>> ?|\.\.\. "
+copybutton_prompt_is_regexp = True

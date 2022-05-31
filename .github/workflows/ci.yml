@@ -42,12 +42,12 @@ jobs:
       - name: Running Vale
         uses: errata-ai/vale-action@reviewdog
         with:
+          config: doc/.vale.ini
           files: doc
           reporter: github-pr-check
           level: error
           filter_mode: nofilter
           fail_on_error: true
-          vale_flags: "--config='doc/.vale.ini'"
 
   test_import:
     name: Smoke Tests

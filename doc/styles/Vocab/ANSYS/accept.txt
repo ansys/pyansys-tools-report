@@ -1,4 +1,10 @@
 ANSYS
 Ansys
 ansys
+pyansys
 PyAnsys Tools Report
+PyAnsys
+codecov
+PyPi
+reportdocs
+https

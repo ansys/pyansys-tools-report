@@ -31,6 +31,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "numpydoc",
+    "myst_parser",
     "sphinx.ext.intersphinx",
     "sphinx_copybutton",
 ]
@@ -82,7 +83,11 @@ html_static_path = ["_static"]
 templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
-source_suffix = ".rst"
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".txt": "markdown",
+    ".md": "markdown",
+}
 
 # The master toctree document.
 master_doc = "index"
@@ -91,3 +96,6 @@ master_doc = "index"
 # exclude traditional Python prompts from the copied code
 copybutton_prompt_text = r">>> ?|\.\.\. "
 copybutton_prompt_is_regexp = True
+
+# MyST config options ---------------------------------------------------------
+myst_heading_anchors = 3

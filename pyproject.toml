@@ -29,6 +29,7 @@ doc = [
     "numpydoc>=1.2",
     "pyansys_sphinx_theme>=0.2",
     "Sphinx-copybutton>=0.4",
+    "myst-parser",
 ]
 
 [project.urls]

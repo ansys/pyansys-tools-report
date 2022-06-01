@@ -2,8 +2,6 @@
 PyAnsys Tools Report
 ********************
 
-Ansys tool for reporting your Python environment's package versions and hardware resources in a standardized way.
-
 Contents
 --------
 
@@ -14,3 +12,11 @@ Contents
    getting_started/index
    user_guide/index
    contributing
+
+README file
+-----------
+
+Find here below the contents of the repostory's main README file.
+
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_

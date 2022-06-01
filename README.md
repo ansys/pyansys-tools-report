@@ -83,7 +83,7 @@ For a local "development" version, install with (requires pip >= 22.0):
 ```bash
    git clone https://github.com/pyansys/pyansys-tools-report.git
    cd pyansys-tools-report
-   pip install -e .
+   pip install .
 ```
 
 

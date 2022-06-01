@@ -7,7 +7,7 @@ name = "pyansys-tools-report"
 version = "0.1.dev0"
 description = "Ansys tool for reporting your Python environment's package versions and hardware resources in a standardized way."
 authors = [{name = "Alexander Kaszynski", email = "alexander.kaszynski@ansys.com"}, {name = "Roberto Pastor Muela", email = "roberto.pastormuela@ansys.com"}]
-readme = "README.rst"
+readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
 dependencies = [

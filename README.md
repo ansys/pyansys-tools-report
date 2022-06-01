@@ -46,9 +46,18 @@ any proposal you may have. This is the best place to post questions and code.
 This repository basically contains a simple Python package which you can import as follows
 (once installed):
 
-```bash
+```python
     import ansys.tools.report as pyansys_report
 ```
+
+Once imported, you can then start playing around with it:
+
+```python
+    # Instantiate a "default" Report
+    rep = pyansys_report.Report()
+```
+
+Refer to the [docs](https://reportdocs.pyansys.com/) to see the details of the module.
 
 ## Installation
 

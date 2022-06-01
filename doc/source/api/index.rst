@@ -1,7 +1,7 @@
 .. _ref_index_api:
 
 =============
-API reference
+API Reference
 =============
 
 .. currentmodule:: ansys.tools.report

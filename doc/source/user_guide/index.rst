@@ -36,7 +36,7 @@ at it to understand the arguments you may use. A simple example of Ansys variabl
 
 The typical output of a ``Report`` would look as follows:
 
-.. code:: bash
+.. code-block:: text
     
     >>> -------------------------------------------------------------------------------
     >>> PyAnsys Software and Environment Report

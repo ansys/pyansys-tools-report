@@ -66,6 +66,7 @@ the manual installation. The process to be followed for each of them is shown in
 
 The ``pyansys-tools-report`` package currently supports Python >=3.7 on Windows, Mac OS, and Linux.
 
+### Standard installation
 Install the latest release from [PyPi](https://pypi.org/project/pyansys-tools-report) with:
 
 ```bash

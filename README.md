@@ -110,6 +110,8 @@ If you're on Windows with Python 3.9, unzip to a ``wheelhouse`` directory and
 install using the same command as before.
 
 Consider installing using a [virtual environment](https://docs.python.org/3/library/venv.html).
+More information on general PyAnsys development can be found in the
+[PyAnsys Developer's Guide](https://dev.docs.pyansys.com/).
 
 ## Rendering the docs
 

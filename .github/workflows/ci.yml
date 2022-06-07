@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  MAIN_PYTHON_VERSION: 3.9
+  MAIN_PYTHON_VERSION: '3.9'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -33,12 +33,30 @@ jobs:
       - name: Run pre-commit
         run: pre-commit run --all-files --show-diff-on-failure
 
+  docs-style:
+    name: Documentation Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Running Vale
+        uses: errata-ai/vale-action@reviewdog
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          files: doc
+          reporter: github-pr-check
+          level: error
+          filter_mode: nofilter
+          fail_on_error: true
+          vale_flags: "--config=doc/.vale.ini"
+
   test_import:
     name: Smoke Tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        os: [windows-latest, macos-latest, ubuntu-latest]
         python-version: ["3.7", "3.8", "3.9"]
 
     steps:
@@ -51,7 +69,7 @@ jobs:
 
       - name: Linux pip cache
         uses: actions/cache@v3
-        if: ${{ runner.os == 'Linux' }}
+        if: ${{ runner.os == 'Linux' }} && ${{ matrix.python-version == env.MAIN_PYTHON_VERSION }}
         with:
           path: ~/.cache/pip
           key: Python-${{ runner.os }}-${{ matrix.python-version }}
@@ -103,6 +121,7 @@ jobs:
   build_doc:
     name: Build Documentation
     needs:
+      - docs-style
       - build_test
     runs-on: ubuntu-latest
 

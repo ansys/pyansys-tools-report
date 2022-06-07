@@ -1,7 +1,7 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
 
-from pyansys_sphinx_theme import pyansys_logo_black
+from ansys_sphinx_theme import pyansys_logo_black
 
 from ansys.tools.report import __version__
 
@@ -13,12 +13,17 @@ release = version = __version__
 
 # use the default pyansys logo
 html_logo = pyansys_logo_black
-html_theme = "pyansys_sphinx_theme"
+html_theme = "ansys_sphinx_theme"
 
 # specify the location of your github repo
+html_short_title = html_title = "PyAnsys Tools Report"
 html_theme_options = {
     "github_url": "https://github.com/pyansys/pyansys-tools-report",
     "show_prev_next": False,
+    "show_breadcrumbs": True,
+    "additional_breadcrumbs": [
+        ("PyAnsys", "https://docs.pyansys.com/"),
+    ],
 }
 
 # Sphinx extensions
@@ -26,6 +31,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "numpydoc",
+    "myst_parser",
     "sphinx.ext.intersphinx",
     "sphinx_copybutton",
 ]
@@ -63,6 +69,12 @@ numpydoc_validation_checks = {
     # type, unless multiple values are being returned"
 }
 
+# Favicon
+html_favicon = "favicon.png"
+
+# notfound.extension
+notfound_template = "404.rst"
+notfound_urls_prefix = "/../"
 
 # static path
 html_static_path = ["_static"]
@@ -71,7 +83,19 @@ html_static_path = ["_static"]
 templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
-source_suffix = ".rst"
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".txt": "markdown",
+    ".md": "markdown",
+}
 
 # The master toctree document.
 master_doc = "index"
+
+# Copy button customization ---------------------------------------------------
+# exclude traditional Python prompts from the copied code
+copybutton_prompt_text = r">>> ?|\.\.\. "
+copybutton_prompt_is_regexp = True
+
+# MyST config options ---------------------------------------------------------
+myst_heading_anchors = 3

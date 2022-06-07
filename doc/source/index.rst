@@ -1,7 +1,22 @@
-..
-   Just reuse the root readme to avoid duplicating the documentation.
-   Provide any documentation specific to your online documentation
-   here.
+********************
+PyAnsys Tools Report
+********************
 
+Contents
+--------
 
-.. include:: ../../README.rst
+.. toctree::
+   :maxdepth: 3
+
+   api/index
+   getting_started/index
+   user_guide/index
+   contributing
+
+README file
+-----------
+
+Find here below the contents of the repository's main README file.
+
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_

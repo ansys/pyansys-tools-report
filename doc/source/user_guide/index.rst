@@ -31,7 +31,7 @@ at it to understand the arguments you may use. A simple example of Ansys variabl
     # Instantiate a Report object
     rep = report.Report(ansys_libs=my_ansys_libs, ansys_vars=my_ansys_vars)
 
-    # For printing the report just call it
+    # For printing the report
     rep
 
 The typical output of a ``Report`` would look as follows:

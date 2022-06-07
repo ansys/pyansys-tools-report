@@ -57,7 +57,7 @@ Once imported, you can then start playing around with it:
     rep = pyansys_report.Report()
 ```
 
-Refer to the [docs](https://reportdocs.pyansys.com/) to see the details of the module.
+Refer to the [online documentation](https://reportdocs.pyansys.com/) to see the details of the module.
 
 ## Installation
 

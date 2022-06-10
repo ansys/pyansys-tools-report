@@ -11,10 +11,10 @@ repos:
   hooks:
   - id: isort
     args: [
-    "--profile", "black",
-    "--force-sort-within-sections",
-    "--filter-files",
-    "--skip-glob", "*__init__.py",
+      "--profile", "black",
+      "--force-sort-within-sections",
+      "--filter-files",
+      "--skip-glob", "*__init__.py",
     ]
 
 - repo: https://gitlab.com/PyCQA/flake8
@@ -27,6 +27,7 @@ repos:
   rev: v2.1.0
   hooks:
   - id: codespell
+    args: ["--ignore-words=ignore_words.txt"]
 
 # add this eventually
 # - repo: https://github.com/pycqa/pydocstyle

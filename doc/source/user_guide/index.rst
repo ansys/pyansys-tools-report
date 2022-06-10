@@ -80,5 +80,19 @@ The typical output of a ``Report`` would look as follows:
     >>> MYVAR_1                        VAL_1
     >>> MYVAR_2                        VAL_2
 
+
+By default, the ``Report`` class would look for a certain set of environment variables. The following
+strings are searched for in the available environment variables. If any match is found, they are included
+in the report:
+
+* ``AWP_ROOT``
+* ``MAPDL``
+* ``FLUENT``
+* ``AEDT``
+* ``DPF``
+
+If you want the ``Report`` class to look for some extra environment variables by default, please
+`raise an issue <https://github.com/pyansys/pyansys-tools-report/issues>`_.
+
 Enjoy its use. If you have any doubts, please raise a question/issue in the 
 `PyAnsys Tools Report Issues <https://github.com/pyansys/pyansys-tools-report/issues>`_ site.

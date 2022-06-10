@@ -86,6 +86,7 @@ strings are searched for in the available environment variables. If any match is
 in the report:
 
 * ``AWP_ROOT``
+* ``ANS``
 * ``MAPDL``
 * ``FLUENT``
 * ``AEDT``

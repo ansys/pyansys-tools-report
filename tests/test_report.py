@@ -166,3 +166,41 @@ None"""
     # Validate the start and end of the report
     assert str_rep.startswith(str_start)
     assert str_rep.endswith(str_end)
+
+
+def test_create_ansys_report_with_def_vars():
+    """Test the creation of a Report and its correct output
+    when imaginary Ansys variables are provided. In this case,
+    default vars are expected. And it is also tested if when a
+    default var is provided specifically, it is not printed twice."""
+
+    # Let us imagine some ansys variables
+    os.environ["MYVAR_1"] = "VAL_1"
+    os.environ["MYVAR_2"] = "VAL_2"
+    os.environ["FLUENT_VAR1"] = "FL_VAL_1"
+    os.environ["FLUENT_VAR2"] = "FL_VAL_2"
+    my_ansys_vars = ["MYVAR_1", "MYVAR_2", "FLUENT_VAR2"]
+
+    # Instantiate a Report object
+    rep = report.Report(ansys_vars=my_ansys_vars)
+
+    # Assert the output of the project info (the one we can control)
+    str_report = """
+Ansys Environment Report
+-------------------------------------------------------------------------------
+
+
+Ansys Installation
+******************
+No Ansys installations provided
+
+
+Ansys Environment Variables
+***************************
+MYVAR_1                        VAL_1
+MYVAR_2                        VAL_2
+FLUENT_VAR2                    FL_VAL_2
+FLUENT_VAR1                    FL_VAL_1"""
+
+    # Assert that the report is properly generated
+    assert rep.project_info() == str_report

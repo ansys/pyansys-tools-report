@@ -15,6 +15,8 @@ except ModuleNotFoundError:
 
 __version__ = importlib_metadata.version("pyansys-tools-report")
 
+__ANSYS_VARS__ = ("AWP_ROOT", "ANS", "FLUENT", "MAPDL", "AEDT", "DPF")
+
 
 def version():
     """Method to return the version of the PyAnsys Report Tool.
@@ -144,6 +146,14 @@ class Report(scooby.Report):
                 if key in self._ansys_vars:
                     env_info_lines.append(f"{key:<30} {value}")
                     n_var += 1
+
+        # Now, take into account the default env variables
+        for ansys_default in __ANSYS_VARS__:
+            for key, value in os.environ.items():
+                if (ansys_default in key) and (key not in self._ansys_vars):
+                    env_info_lines.append(f"{key:<30} {value}")
+                    n_var += 1
+
         if not n_var:
             env_info_lines.append("None")
         env_info = "\n".join(env_info_lines)

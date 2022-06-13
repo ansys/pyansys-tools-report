@@ -173,7 +173,7 @@ def test_create_ansys_report_with_def_vars():
     when imaginary Ansys variables are provided. In this case,
     default vars are expected. And it is also testing when a
     default var is provided specifically, if it is not printed twice.
-    
+
     Also, gpu set to False is tested, for coverage reasons."""
 
     # Let us imagine some ansys variables

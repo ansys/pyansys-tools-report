@@ -118,6 +118,9 @@ jobs:
           path: .cov/html
           retention-days: 7
 
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+
   build_doc:
     name: Build Documentation
     needs:

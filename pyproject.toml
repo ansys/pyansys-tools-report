@@ -6,7 +6,12 @@ build-backend = "flit_core.buildapi"
 name = "pyansys-tools-report"
 version = "0.1.dev0"
 description = "Ansys tool for reporting your Python environment's package versions and hardware resources in a standardized way."
-authors = [{name = "Alexander Kaszynski", email = "alexander.kaszynski@ansys.com"}, {name = "Roberto Pastor Muela", email = "roberto.pastormuela@ansys.com"}]
+authors = [
+    {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
+]
+maintainers = [
+    {name = "PyAnsys developers", email = "pyansys.support@ansys.com"},
+]
 readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
@@ -39,7 +44,7 @@ home = "https://github.com/pyansys/pyansys-tools-report"
 name = "ansys.tools.report"
 
 [tool.pytest.ini_options]
-minversion = "6.0"
+minversion = "7.1"
 addopts = "-ra -q -v --cov=ansys.tools.report --cov-report term"
 testpaths = [
     "tests",

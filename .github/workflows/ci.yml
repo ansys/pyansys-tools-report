@@ -10,6 +10,7 @@ on:
 
 env:
   MAIN_PYTHON_VERSION: '3.9'
+  PACKAGE_NAME: pyansys-tools-report
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

@@ -81,7 +81,12 @@ jobs:
 
       - name: Test import
         run: |
+          python -c "import ansys.tools.report as report; report.version();"
+
+      - name: Retrieve version
+        run: |
           echo "::set-output name=PYANSYS_TOOLS_REPORT_VERSION::$(python -c "import ansys.tools.report as report; report.version()")"
+        id: version
 
       - name: Generate wheelhouse
         run: pip wheel . -w wheelhouse

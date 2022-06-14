@@ -10,6 +10,7 @@ on:
 
 env:
   MAIN_PYTHON_VERSION: '3.9'
+  PACKAGE_NAME: pyansys-tools-report
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -37,7 +38,7 @@ jobs:
     name: Documentation Style Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Running Vale
         uses: errata-ai/vale-action@reviewdog
@@ -81,6 +82,27 @@ jobs:
       - name: Test import
         run: |
           python -c "import ansys.tools.report as report; report.version();"
+
+      - name: Retrieve version
+        run: |
+          echo "::set-output name=PYANSYS_TOOLS_REPORT_VERSION::$(python -c "import ansys.tools.report as report; print(report.version())")"
+        id: version
+
+      - name: Generate wheelhouse
+        run: pip wheel . -w wheelhouse
+
+      - name: Zip wheelhouse
+        uses: vimtor/action-zip@v1
+        with:
+          files: wheelhouse
+          dest: ${{ env.PACKAGE_NAME }}-v${{ steps.version.outputs.PYANSYS_TOOLS_REPORT_VERSION }}-wheelhouse-${{ runner.os }}-${{ matrix.python-version }}.zip
+
+      - name: Upload Wheelhouse
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.PACKAGE_NAME }}-v${{ steps.version.outputs.PYANSYS_TOOLS_REPORT_VERSION }}-wheelhouse-${{ runner.os }}-${{ matrix.python-version }}
+          path: '*.zip'
+          retention-days: 7
 
   build_test:
     name: Build and Unit Testing
@@ -168,10 +190,49 @@ jobs:
           clean: true
           single-commit: true
 
+  package:
+    name: Package project
+    needs:
+      - test_import
+      - style
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Linux pip cache
+        uses: actions/cache@v3
+        if: ${{ runner.os == 'Linux' }}
+        with:
+          path: ~/.cache/pip
+          key: Python-${{ runner.os }}-${{ env.MAIN_PYTHON_VERSION }}
+  
+      - name: Install pyansys-tools-report
+        run: |
+          pip install build
+          python -m build
+          pip install dist/*.whl
+
+      - name: Check package
+        run: |
+          pip install twine
+          twine check dist/*
+
+      - name: Upload wheel and binaries
+        uses: actions/upload-artifact@v2
+        with:
+          name: PyAnsys-Tools-Report-packages
+          path: dist/
+          retention-days: 7
+
   release:
     name: Release project
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
-    needs: [build_doc, build_test, style]
+    needs: [build_doc, build_test, style, package]
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python
@@ -199,7 +260,6 @@ jobs:
           files: |
             ./**/*.whl
             ./**/*.tar.gz
-            ./**/*.pdf
             ./**/*.zip
 
       - name: Notify if fail

@@ -41,7 +41,7 @@ doc = [
 home = "https://github.com/pyansys/pyansys-tools-report"
 
 [tool.flit.module]
-name = "ansys.tools.report"
+name = "ansys.tools"
 
 [tool.pytest.ini_options]
 minversion = "7.1"

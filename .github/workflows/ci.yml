@@ -85,7 +85,7 @@ jobs:
 
       - name: Retrieve version
         run: |
-          echo "::set-output name=PYANSYS_TOOLS_REPORT_VERSION::$(python -c "import ansys.tools.report as report; report.version()")"
+          echo "::set-output name=PYANSYS_TOOLS_REPORT_VERSION::$(python -c "import ansys.tools.report as report; print(report.version())")"
         id: version
 
       - name: Generate wheelhouse

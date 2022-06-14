@@ -15,7 +15,7 @@ except ModuleNotFoundError:
 
 __version__ = importlib_metadata.version("pyansys-tools-report")
 
-__ANSYS_VARS__ = ("AWP_ROOT", "ANS", "FLUENT", "MAPDL", "AEDT", "DPF")
+__ANSYS_VARS__ = ("AWP", "ACP", "ANS", "FLUENT", "MAPDL", "AEDT", "DPF")
 
 
 def version():
@@ -147,13 +147,21 @@ class Report(scooby.Report):
                     env_info_lines.append(f"{key:<30} {value}")
                     n_var += 1
 
-        # Now, take into account the default env variables
-        for ansys_default in __ANSYS_VARS__:
-            for key, value in os.environ.items():
-                if (ansys_default in key) and (key not in self._ansys_vars):
-                    env_info_lines.append(f"{key:<30} {value}")
-                    n_var += 1
+        # Loop over all environment variables
+        for key, value in os.environ.items():
+            # Now, take into account the default env variables
+            for ansys_default in __ANSYS_VARS__:
+                # Check if the "ansys_default" substring is found
+                if ansys_default in key:
+                    # If found, check if it is already available or not
+                    if (self._ansys_vars is None) or (key not in self._ansys_vars):
+                        env_info_lines.append(f"{key:<30} {value}")
+                        n_var += 1
 
+                    # And now break the inner loop and jump to next env var
+                    break
+
+        # Finally, if no env vars were found, just append None
         if not n_var:
             env_info_lines.append("None")
         env_info = "\n".join(env_info_lines)

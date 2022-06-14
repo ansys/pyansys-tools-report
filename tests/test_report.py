@@ -206,3 +206,39 @@ FLUENT_VAR1                    FL_VAL_1"""
 
     # Assert that the report is properly generated
     assert rep.project_info() == str_report
+
+
+def test_create_ansys_report_with_no_vars():
+    """Test the creation of a Report and its correct output
+    when no Ansys variables are provided. In this case,
+    default vars are expected, even though none are provided."""
+
+    # Let us imagine  "default" ansys variables
+    os.environ["FLUENT_VAR1"] = "FL_VAL_1"
+    os.environ["FLUENT_VAR2"] = "FL_VAL_2"
+    os.environ["FLUENT_ANS_VAR1"] = "FL_VAL_1"
+    os.environ["FLUENT_ANS_VAR2"] = "FL_VAL_2"
+
+    # Instantiate a Report object
+    rep = report.Report()
+
+    # Assert the output of the project info (the one we can control)
+    str_report = """
+Ansys Environment Report
+-------------------------------------------------------------------------------
+
+
+Ansys Installation
+******************
+No Ansys installations provided
+
+
+Ansys Environment Variables
+***************************
+FLUENT_VAR1                    FL_VAL_1
+FLUENT_VAR2                    FL_VAL_2
+FLUENT_ANS_VAR1                FL_VAL_1
+FLUENT_ANS_VAR2                FL_VAL_2"""
+
+    # Assert that the report is properly generated
+    assert rep.project_info() == str_report

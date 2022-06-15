@@ -167,7 +167,7 @@ class Report(scooby.Report):
         # Loop over the Ansys default variables prefixes
         for prefix in __ANSYS_VARS_PREFIX__:
             # Check if the "prefix" substring is found
-            if env_var.startswith(prefix + "_"):
+            if env_var.startswith(prefix):
                 return True
 
     def __repr__(self):

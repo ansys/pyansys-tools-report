@@ -38,10 +38,12 @@ doc = [
 ]
 
 [project.urls]
-home = "https://github.com/pyansys/pyansys-tools-report"
+Home = "https://reportdocs.pyansys.com/"
+Source = "https://github.com/pyansys/pyansys-tools-report"
+Tracker = "https://github.com/ansys/pyansys-tools-report/issues"
 
 [tool.flit.module]
-name = "ansys.tools.report"
+name = "ansys.tools"
 
 [tool.pytest.ini_options]
 minversion = "7.1"

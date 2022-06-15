@@ -8,12 +8,7 @@ import sys
 
 import scooby
 
-try:
-    import importlib.metadata as importlib_metadata
-except ModuleNotFoundError:
-    import importlib_metadata
-
-__version__ = importlib_metadata.version("pyansys-tools-report")
+from ansys.tools import __version__
 
 __ANSYS_VARS_PREFIX__ = (
     "AWP",

@@ -15,7 +15,7 @@ except ModuleNotFoundError:
 
 __version__ = importlib_metadata.version("pyansys-tools-report")
 
-__ANSYS_VARS_PREFIX__ = ("AWP", "ACP", "ANS", "FLUENT", "MAPDL", "AEDT", "DPF")
+__ANSYS_VARS_PREFIX__ = ("AWP", "ACP", "ANS", "FLUENT", "MAPDL", "DPF", "SIMPLORER", "SIWAVE")
 
 
 def version():

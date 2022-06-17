@@ -19,6 +19,7 @@ __ANSYS_VARS_PREFIX__ = (
     "DPF",
     "SIMPLORER",
     "SIWAVE",
+    "CADOE",
 )
 
 
@@ -168,6 +169,19 @@ class Report(scooby.Report):
         return install_info + env_info
 
     def _is_ansys_var(self, env_var):
+        """Method to determine whether an environment variable belongs
+        to the set of ANSYS default environment variables.
+
+        Parameters
+        ----------
+        env_var : str
+            The environment variable to be evaluated.
+
+        Returns
+        -------
+        bool
+            True if the environment variable belongs to this set.
+        """
         # Loop over the Ansys default variables prefixes
         for prefix in __ANSYS_VARS_PREFIX__:
             # Check if the "prefix" substring is found

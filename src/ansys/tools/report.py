@@ -180,7 +180,7 @@ class Report(scooby.Report):
         Returns
         -------
         bool
-            True if the environment variable belongs to this set.
+            ``True`` when successful, ``False`` when failed.
         """
         # Loop over the Ansys default variables prefixes
         for prefix in __ANSYS_VARS_PREFIX__:

@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "pyansys-tools-report"
-version = "0.1.dev0"
+version = "0.2.dev0"
 description = "Ansys tool for reporting your Python environment's package versions and hardware resources in a standardized way."
 authors = [
     {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},

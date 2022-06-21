@@ -27,5 +27,5 @@ clean:
 # Customized PDF build
 pdf:
 	@$(SPHINXBUILD) -M latex "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	cd build/latex && latexmk -r latexmkrc -pdf *.tex -interaction=nonstopmode || true
+	cd _build/latex && latexmk -r latexmkrc -pdf *.tex -interaction=nonstopmode || true
 	(test -f _build/latex/ansystools*.pdf && echo pdf exists) || exit 1

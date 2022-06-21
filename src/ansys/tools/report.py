@@ -85,7 +85,7 @@ class Report(scooby.Report):
             "google.protobuf",  # protobuf library
         ]
 
-        if os.name == "linux":
+        if os.name == "posix":
             core.extend(["pexpect"])
 
         # Optional packages

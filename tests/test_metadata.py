@@ -5,10 +5,10 @@ import ansys.tools.report as ansys_tools_report
 def test_pkg_version_method():
     """Test the correct functioning of the version() method."""
 
-    assert ansys_tools_report.version() == "0.2.0"
+    assert ansys_tools_report.version() == "0.2.2"
 
 
 def test_pkg_version_var():
     """Test the correct functioning of the __version__ var in __init__.py file method."""
 
-    assert ansys_tools.__version__ == "0.2.0"
+    assert ansys_tools.__version__ == "0.2.2"

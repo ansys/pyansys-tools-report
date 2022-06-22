@@ -177,7 +177,6 @@ jobs:
         run: |
           sudo apt update
           sudo apt-get install -y texlive-latex-extra latexmk
-          pip install .[doc]
           make -C doc pdf
 
       - name: Upload documentation

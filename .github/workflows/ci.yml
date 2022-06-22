@@ -173,11 +173,24 @@ jobs:
         run: |
           make -C doc html
 
+      - name: Build PDF Documentation
+        run: |
+          sudo apt update
+          sudo apt-get install -y texlive-latex-extra latexmk
+          make -C doc pdf
+
       - name: Upload documentation
         uses: actions/upload-artifact@v3
         with:
           name: HTML-Documentation
           path: doc/_build/html
+          retention-days: 7
+
+      - name: Upload PDF Documentation
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: PDF-Documentation
+          path: doc/_build/latex/ansystools*.pdf
           retention-days: 7
 
       - name: Deploy documentation to gh-pages
@@ -261,6 +274,7 @@ jobs:
             ./**/*.whl
             ./**/*.tar.gz
             ./**/*.zip
+            ./**/*.pdf
 
       - name: Notify if fail
         uses: skitionek/notify-microsoft-teams@master

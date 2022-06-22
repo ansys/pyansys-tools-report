@@ -23,3 +23,9 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 	find . -type d -name "_autosummary" -exec rm -rf {} +
+
+# Customized PDF build
+pdf:
+	@$(SPHINXBUILD) -M latex "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	cd _build/latex && latexmk -r latexmkrc -pdf *.tex -interaction=nonstopmode || true
+	(test -f _build/latex/ansystools*.pdf && echo pdf exists) || exit 1

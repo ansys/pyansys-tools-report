@@ -1,7 +1,13 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
 
-from ansys_sphinx_theme import pyansys_logo_black
+from ansys_sphinx_theme import (
+    ansys_logo_white,
+    ansys_logo_white_cropped,
+    pyansys_logo_black,
+    watermark,
+)
+from ansys_sphinx_theme.latex import generate_preamble
 
 from ansys.tools.report import __version__
 
@@ -99,3 +105,7 @@ copybutton_prompt_is_regexp = True
 
 # MyST config options ---------------------------------------------------------
 myst_heading_anchors = 3
+
+# Generate the LaTeX preamble
+latex_additional_files = [watermark, ansys_logo_white, ansys_logo_white_cropped]
+latex_elements = {"preamble": generate_preamble(html_title)}

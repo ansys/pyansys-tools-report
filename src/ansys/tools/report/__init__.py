@@ -1,8 +1,4 @@
-from ansys.tools.report.report import Report, version
+# Improving accessibility to the pyansys-tools-report resources
 
-try:
-    import importlib.metadata as importlib_metadata
-except ModuleNotFoundError:
-    import importlib_metadata
-
-__version__ = importlib_metadata.version("pyansys-tools-report")
+from ansys.tools.report.report import Report
+from ansys.tools.report._version import __version__, version

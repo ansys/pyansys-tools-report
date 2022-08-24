@@ -4,11 +4,9 @@
 API reference
 =============
 
+This is the API reference documentation for the ``pyansys-tools-report`` package
+
 .. currentmodule:: ansys.tools.report
 
 .. automodule:: ansys.tools.report
-    :members:
-    :undoc-members:
-    :private-members:
-    :special-members: __init__
-    :show-inheritance:
+    :members: version, Report

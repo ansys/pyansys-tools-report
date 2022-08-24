@@ -10,6 +10,7 @@ except ModuleNotFoundError:
 
 __version__ = importlib_metadata.version("pyansys-tools-report")
 
+
 def version():
     """Method to return the version of the PyAnsys Report Tool.
 

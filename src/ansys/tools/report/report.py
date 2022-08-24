@@ -20,6 +20,7 @@ __ANSYS_VARS_PREFIX__ = (
     "CADOE",
 )
 
+
 class Report(scooby.Report):
     """Generate a :class:`scooby.Report` instance.
 

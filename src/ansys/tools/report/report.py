@@ -8,8 +8,6 @@ import sys
 
 import scooby
 
-from ansys.tools import __version__
-
 __ANSYS_VARS_PREFIX__ = (
     "AWP",
     "ACP",
@@ -23,19 +21,32 @@ __ANSYS_VARS_PREFIX__ = (
 )
 
 
-def version():
-    """Method to return the version of the PyAnsys Report Tool.
-
-    Returns
-    -------
-    str
-        The version of the tool being used.
-    """
-    return __version__
-
-
 class Report(scooby.Report):
-    """A class for custom scooby.Report."""
+    """Generate a :class:`scooby.Report` instance.
+
+    Parameters
+    ----------
+    additional : list(ModuleType), list(str), optional
+        List of packages or package names to add to output information.
+        Defaults to ``None``.
+    ncol : int, optional
+        Number of package-columns in html table; only has effect if
+        ``mode='HTML'`` or ``mode='html'``. Defaults to 3.
+    text_width : int, optional
+        The text width for non-HTML display modes. Defaults to 80.
+    sort : bool, optional
+        Alphabetically sort the packages. Defaults to ``False``.
+    gpu : bool, optional
+        Gather information about the GPU. Defaults to ``True`` but if
+        experiencing rendering issues, pass ``False`` to safely generate
+        a report.
+    ansys_vars : list of str, optional
+        List containing the Ansys environment variables to be reported.
+        (e.g. ["MYVAR_1", "MYVAR_2" ...]). Defaults to ``None``.
+    ansys_libs : dict {str : str}, optional
+        Dictionary containing the Ansys libraries and versions to be reported.
+        (e.g. {"MyLib" : "v1.2", ...}). Defaults to ``None``.
+    """
 
     def __init__(
         self,
@@ -47,31 +58,7 @@ class Report(scooby.Report):
         ansys_vars=None,
         ansys_libs=None,
     ):
-        """Generate a :class:`scooby.Report` instance.
-
-        Parameters
-        ----------
-        additional : list(ModuleType), list(str), optional
-            List of packages or package names to add to output information.
-            Defaults to ``None``.
-        ncol : int, optional
-            Number of package-columns in html table; only has effect if
-            ``mode='HTML'`` or ``mode='html'``. Defaults to 3.
-        text_width : int, optional
-            The text width for non-HTML display modes. Defaults to 80.
-        sort : bool, optional
-            Alphabetically sort the packages. Defaults to ``False``.
-        gpu : bool, optional
-            Gather information about the GPU. Defaults to ``True`` but if
-            experiencing rendering issues, pass ``False`` to safely generate
-            a report.
-        ansys_vars : list of str, optional
-            List containing the Ansys environment variables to be reported.
-            (e.g. ["MYVAR_1", "MYVAR_2" ...]). Defaults to ``None``.
-        ansys_libs : dict {str : str}, optional
-            Dictionary containing the Ansys libraries and versions to be reported.
-            (e.g. {"MyLib" : "v1.2", ...}). Defaults to ``None``.
-        """
+        """Report class constructor."""
         # Mandatory packages
         core = [
             "matplotlib",

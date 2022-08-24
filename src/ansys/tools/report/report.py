@@ -8,7 +8,7 @@ import sys
 
 import scooby
 
-from ansys.tools import __version__
+from ansys.tools.report import __version__
 
 __ANSYS_VARS_PREFIX__ = (
     "AWP",

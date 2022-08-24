@@ -43,7 +43,7 @@ Source = "https://github.com/pyansys/pyansys-tools-report"
 Tracker = "https://github.com/ansys/pyansys-tools-report/issues"
 
 [tool.flit.module]
-name = "ansys.tools"
+name = "ansys.tools.report"
 
 [tool.pytest.ini_options]
 minversion = "7.1"

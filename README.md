@@ -36,7 +36,7 @@ any proposal you may have.
 
 ## Documentation and issues
 
-See the [documentation](https://reportdocs.pyansys.com/) page for more details.
+See the [documentation](https://report.tools.docs.pyansys.com/) page for more details.
 
 You are welcome to help contribute to it in any possible way. Please submit
 [here](https://github.com/pyansys/pyansys-tools-report/issues) an issue with
@@ -57,7 +57,7 @@ Once imported, you can then start playing around with it:
     rep = pyansys_report.Report()
 ```
 
-Refer to the [online documentation](https://reportdocs.pyansys.com/) to see the details of the module.
+Refer to the [online documentation](https://report.tools.docs.pyansys.com/) to see the details of the module.
 
 ## Installation
 

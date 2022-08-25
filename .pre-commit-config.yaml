@@ -3,25 +3,16 @@ repos:
   rev: 22.3.0
   hooks:
   - id: black
-    args: ["src"]
-
 
 - repo: https://github.com/pycqa/isort
   rev: 5.10.1
   hooks:
   - id: isort
-    args: [
-      "--profile", "black",
-      "--force-sort-within-sections",
-      "--filter-files",
-      "--skip-glob", "*__init__.py",
-    ]
 
 - repo: https://gitlab.com/PyCQA/flake8
   rev: 3.9.2
   hooks:
   - id: flake8
-    args: []
 
 - repo: https://github.com/codespell-project/codespell
   rev: v2.1.0
@@ -29,13 +20,12 @@ repos:
   - id: codespell
     args: ["--ignore-words=ignore_words.txt"]
 
-# add this eventually
-# - repo: https://github.com/pycqa/pydocstyle
-#   rev: 6.1.1
-#   hooks:
-#   - id: pydocstyle
-#     additional_dependencies: [toml]
-#     exclude: "tests/"
+- repo: https://github.com/pycqa/pydocstyle
+  rev: 6.1.1
+  hooks:
+  - id: pydocstyle
+    additional_dependencies: [toml]
+    exclude: "tests/"
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v4.1.0

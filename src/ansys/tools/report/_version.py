@@ -1,5 +1,5 @@
 """
-PyAnsys Tools Report version module
+PyAnsys Tools Report version module.
 
 Module containing the version function for .
 """
@@ -12,7 +12,7 @@ __version__ = importlib_metadata.version("pyansys-tools-report")
 
 
 def version():
-    """Method to return the version of the PyAnsys Report Tool.
+    """Return the version of the PyAnsys Report Tool.
 
     Returns
     -------

@@ -6,5 +6,5 @@ PyAnsys Tools Report
 PyAnsys
 codecov
 PyPi
-reportdocs
+report.tools.docs
 https

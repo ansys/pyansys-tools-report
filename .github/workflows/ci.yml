@@ -274,7 +274,7 @@ jobs:
             ./**/*.whl
             ./**/*.tar.gz
             ./**/*.zip
-            ./**/*.pdf
+            ./**/ansystoolsreport.pdf
 
       - name: Notify if fail
         uses: skitionek/notify-microsoft-teams@master

@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "pyansys-tools-report"
-version = "0.3.1"
+version = "0.3.2"
 description = "Ansys tool for reporting your Python environment's package versions and hardware resources in a standardized way."
 authors = [
      "ANSYS, Inc. <pyansys.support@ansys.com>",

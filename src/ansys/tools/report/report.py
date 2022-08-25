@@ -1,5 +1,5 @@
 """
-PyAnsys Tools Report
+PyAnsys Tools Report.
 
 Module containing the standardized Report class for PyAnsys projects.
 """
@@ -115,7 +115,6 @@ class Report(scooby.Report):
         str
             The project information (env variables and installation)
         """
-
         # List installed Ansys
         lines = ["", "Ansys Environment Report", "-" * 79, "\n"]
         lines.append("\n".join(["Ansys Installation", "******************"]))
@@ -156,8 +155,8 @@ class Report(scooby.Report):
         return install_info + env_info
 
     def _is_ansys_var(self, env_var):
-        """Method to determine whether an environment variable belongs
-        to the set of ANSYS default environment variables.
+        """
+        Determine if an env. variable belongs to the set of ANSYS default env. variables.
 
         Parameters
         ----------
@@ -176,6 +175,13 @@ class Report(scooby.Report):
                 return True
 
     def __repr__(self):
+        """Print out the report.
+
+        Returns
+        -------
+        str
+            Report statement.
+        """
         add_text = "-" * 79 + "\nPyAnsys Software and Environment Report"
 
         report = add_text + super().__repr__() + self.project_info()

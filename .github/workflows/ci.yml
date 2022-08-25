@@ -98,7 +98,7 @@ jobs:
           dest: ${{ env.PACKAGE_NAME }}-v${{ steps.version.outputs.PYANSYS_TOOLS_REPORT_VERSION }}-wheelhouse-${{ runner.os }}-${{ matrix.python-version }}.zip
 
       - name: Upload Wheelhouse
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.PACKAGE_NAME }}-v${{ steps.version.outputs.PYANSYS_TOOLS_REPORT_VERSION }}-wheelhouse-${{ runner.os }}-${{ matrix.python-version }}
           path: '*.zip'
@@ -187,7 +187,7 @@ jobs:
           retention-days: 7
 
       - name: Upload PDF Documentation
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3
         with:
           name: PDF-Documentation
           path: doc/_build/latex/ansystools*.pdf
@@ -236,7 +236,7 @@ jobs:
           twine check dist/*
 
       - name: Upload wheel and binaries
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: PyAnsys-Tools-Report-packages
           path: dist/

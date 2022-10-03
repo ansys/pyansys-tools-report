@@ -39,7 +39,7 @@ packages = [
 [tool.poetry.dependencies]
 # Core dependencies
 python = ">=3.7,<4.0"
-importlib-metadata = {version = "^4.0", python = "<3.8"}
+importlib-metadata = {version = ">=4,<6", python = "<3.8"}
 scooby = ">=0.5.12"
 pyvista = ">=0.34.1"
 

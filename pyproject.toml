@@ -7,7 +7,7 @@ build-backend = "flit_core.buildapi"
 name = "pyansys-tools-report"
 version = "0.4.dev0"
 dynamic = ["description"]
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.7"
 license = {file = "LICENSE"}
 authors = [

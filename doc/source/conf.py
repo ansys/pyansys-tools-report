@@ -5,6 +5,7 @@ import os
 from ansys_sphinx_theme import (
     ansys_logo_white,
     ansys_logo_white_cropped,
+    get_version_match,
     pyansys_logo_black,
     watermark,
 )
@@ -14,14 +15,6 @@ from sphinx.builders.latex import LaTeXBuilder
 from ansys.tools.report import __version__
 
 LaTeXBuilder.supported_image_types = ["image/png", "image/pdf", "image/svg+xml"]
-
-
-def get_version_match(semver):
-    """Evaluate the version match for the multi-documentation."""
-    if semver.endswith("dev0"):
-        return "dev"
-    major, minor, _ = semver.split(".")
-    return ".".join([major, minor])
 
 
 # Project information

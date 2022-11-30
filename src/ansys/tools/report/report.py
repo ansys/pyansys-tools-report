@@ -20,6 +20,24 @@ __ANSYS_VARS_PREFIX__ = (
     "CADOE",
 )
 
+__PYANSYS_LIBS__ = (
+    "ansys-mapdl-core",
+    "ansys-dpf-core",
+    "ansys-dpf-post",
+    "ansys-dpf-gate",
+    "ansys-fluent-core",
+    "pyaedt",
+    "ansys-platform-instancemanagement",
+    "ansys-grantami-bomanalytics",
+    "ansys-openapi-common",
+    "ansys-mapdl-reader",
+    "ansys-fluent-visualization",
+    "ansys-fluent-parametric",
+    "ansys-sphinx-theme",
+    "ansys-seascape",
+    "pyansys-tools-report",
+    "pyansys-tools-versioning",
+)
 
 class Report(scooby.Report):
     """Generate a :class:`scooby.Report` instance.
@@ -79,6 +97,12 @@ class Report(scooby.Report):
         optional = ["matplotlib"]
         if sys.version_info[1] < 9:
             optional.append("ansys_corba")
+        
+        # PyAnsys packages + additional ones
+        if additional:
+            additional.extend(__PYANSYS_LIBS__)
+        else:
+            additional = __PYANSYS_LIBS__
 
         # Information about the GPU - bare except in case there is a rendering
         # bug that the user is trying to report.

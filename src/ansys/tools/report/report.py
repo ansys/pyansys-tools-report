@@ -39,6 +39,7 @@ __PYANSYS_LIBS__ = (
     "pyansys-tools-versioning",
 )
 
+
 class Report(scooby.Report):
     """Generate a :class:`scooby.Report` instance.
 
@@ -97,7 +98,7 @@ class Report(scooby.Report):
         optional = ["matplotlib"]
         if sys.version_info[1] < 9:
             optional.append("ansys_corba")
-        
+
         # PyAnsys packages + additional ones
         if additional:
             additional.extend(__PYANSYS_LIBS__)

@@ -21,22 +21,22 @@ __ANSYS_VARS_PREFIX__ = (
 )
 
 __PYANSYS_LIBS__ = (
-    "ansys-mapdl-core",
-    "ansys-dpf-core",
-    "ansys-dpf-post",
-    "ansys-dpf-gate",
-    "ansys-fluent-core",
+    "ansys_sphinx_theme",
+    "ansys.dpf.core",
+    "ansys.dpf.post",
+    "ansys.dpf.gate",
+    "ansys.fluent.core",
+    "ansys.fluent.visualization",
+    "ansys.fluent.parametric",
+    "ansys.grantami.bomanalytics",
+    "ansys.mapdl.core",
+    "ansys.mapdl.reader",
+    "ansys.openapi.common",
+    "ansys.platform.instancemanagement",
+    "ansys.seascape",
+    "ansys.tools.report",
+    "ansys.tools.versioning",
     "pyaedt",
-    "ansys-platform-instancemanagement",
-    "ansys-grantami-bomanalytics",
-    "ansys-openapi-common",
-    "ansys-mapdl-reader",
-    "ansys-fluent-visualization",
-    "ansys-fluent-parametric",
-    "ansys-sphinx-theme",
-    "ansys-seascape",
-    "pyansys-tools-report",
-    "pyansys-tools-versioning",
 )
 
 
@@ -80,15 +80,15 @@ class Report(scooby.Report):
         """Report class constructor."""
         # Mandatory packages
         core = [
+            "appdirs",
+            "google.protobuf",  # protobuf library
+            "grpc",  # grpcio
             "matplotlib",
             "numpy",
-            "pyvista",
-            "appdirs",
-            "tqdm",
             "pyiges",
+            "pyvista",
             "scipy",
-            "grpc",  # grpcio
-            "google.protobuf",  # protobuf library
+            "tqdm",
         ]
 
         if os.name == "posix":

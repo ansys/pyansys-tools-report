@@ -7,6 +7,7 @@
 [![GH-CI](https://github.com/pyansys/pyansys-tools-report/actions/workflows/ci.yml/badge.svg)](https://github.com/pyansys/pyansys-tools-report/actions/workflows/ci.yml)
 [![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat)](https://github.com/psf/black)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/pyansys/pyansys-tools-report/main.svg)](https://results.pre-commit.ci/latest/github/pyansys/pyansys-tools-report/main)
 
 Ansys tool for reporting your Python environment's package versions and hardware resources in a standardized way.
 

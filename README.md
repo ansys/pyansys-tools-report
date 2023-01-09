@@ -48,14 +48,14 @@ This repository basically contains a simple Python package which you can import 
 (once installed):
 
 ```python
-    import ansys.tools.report as pyansys_report
+import ansys.tools.report as pyansys_report
 ```
 
 Once imported, you can then start playing around with it:
 
 ```python
-    # Instantiate a "default" Report
-    rep = pyansys_report.Report()
+# Instantiate a "default" Report
+rep = pyansys_report.Report()
 ```
 
 Refer to the [online documentation](https://report.tools.docs.pyansys.com/) to see the details of the module.

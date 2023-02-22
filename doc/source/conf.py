@@ -35,7 +35,6 @@ html_theme_options = {
         "json_url": f"https://{cname}/release/versions.json",
         "version_match": get_version_match(__version__),
     },
-    "navbar_end": ["version-switcher", "theme-switcher", "navbar-icon-links"],
     "github_url": "https://github.com/pyansys/pyansys-tools-report",
     "show_prev_next": False,
     "show_breadcrumbs": True,

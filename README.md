@@ -7,20 +7,24 @@
 [![GH-CI](https://github.com/pyansys/pyansys-tools-report/actions/workflows/ci.yml/badge.svg)](https://github.com/pyansys/pyansys-tools-report/actions/workflows/ci.yml)
 [![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat)](https://github.com/psf/black)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/pyansys/pyansys-tools-report/main.svg)](https://results.pre-commit.ci/latest/github/pyansys/pyansys-tools-report/main)
 
 Ansys tool for reporting your Python environment's package versions and hardware resources in a standardized way.
 
 ## Table of contents
 
 <!--ts-->
-   * [Introduction](#introduction)
-   * [Documentation and issues](#documentation-and-issues)
-   * [How does it work?](#how-does-it-work)
-   * [Installation](#installation)
-      * [Offline Installation](#offline-installation)
-   * [Rendering the docs](#rendering-the-docs)
-   * [Running the tests](#running-the-tests)
-   * [Requirements](#requirements)
+- [PyAnsys Tools Report](#pyansys-tools-report)
+  - [Table of contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Documentation and issues](#documentation-and-issues)
+  - [How does it work?](#how-does-it-work)
+  - [Installation](#installation)
+    - [Standard installation](#standard-installation)
+    - [Offline installation](#offline-installation)
+  - [Rendering the docs](#rendering-the-docs)
+  - [Running the tests](#running-the-tests)
+  - [Requirements](#requirements)
 <!--te-->
 
 
@@ -47,14 +51,14 @@ This repository basically contains a simple Python package which you can import 
 (once installed):
 
 ```python
-    import ansys.tools.report as pyansys_report
+import ansys.tools.report as pyansys_report
 ```
 
 Once imported, you can then start playing around with it:
 
 ```python
-    # Instantiate a "default" Report
-    rep = pyansys_report.Report()
+# Instantiate a "default" Report
+rep = pyansys_report.Report()
 ```
 
 Refer to the [online documentation](https://report.tools.docs.pyansys.com/) to see the details of the module.

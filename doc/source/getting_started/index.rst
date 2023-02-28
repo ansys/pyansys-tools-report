@@ -51,7 +51,7 @@ For example, on Linux with Python 3.7, unzip it and install it with the followin
 
 .. code:: bash
 
-   unzip pyansys-tools-report-v0.5.0-wheelhouse-Linux-3.7.zip wheelhouse
+   unzip pyansys-tools-report-v0.5.1-wheelhouse-Linux-3.7.zip wheelhouse
    pip install pyansys-tools-report -f wheelhouse --no-index --upgrade --ignore-installed
 
 

@@ -32,7 +32,7 @@ html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PyAnsys Tools Report"
 html_theme_options = {
     "switcher": {
-        "json_url": f"https://{cname}/release/versions.json",
+        "json_url": f"https://{cname}/versions.json",
         "version_match": get_version_match(__version__),
     },
     "github_url": "https://github.com/pyansys/pyansys-tools-report",

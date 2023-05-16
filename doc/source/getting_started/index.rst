@@ -24,14 +24,14 @@ Alternatively, install the latest from GitHub via:
 
 .. code:: bash
 
-   pip install git+https://github.com/pyansys/pyansys-tools-report.git
+   pip install git+https://github.com/ansys/pyansys-tools-report.git
 
 
 For a local "development" version, install with (requires pip >= 22.0):
 
 .. code:: bash
 
-   git clone https://github.com/pyansys/pyansys-tools-report.git
+   git clone https://github.com/ansys/pyansys-tools-report.git
    cd pyansys-tools-report
    pip install .
 
@@ -40,7 +40,7 @@ Offline installation
 
 If you lack an internet connection on your install machine, the recommended way
 of installing PyAnsys Tools Report is downloading the wheelhouse archive from the
-`Releases Page <https://github.com/pyansys/pyansys-tools-report/releases>`_ for your
+`Releases Page <https://github.com/ansys/pyansys-tools-report/releases>`_ for your
 corresponding machine architecture.
 
 Each wheelhouse archive contains all the python wheels necessary to install

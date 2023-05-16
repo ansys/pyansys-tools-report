@@ -48,7 +48,7 @@ doc = [
 name = "ansys.tools.report"
 
 [project.urls]
-Source = "https://github.com/pyansys/pyansys-tools-report"
+Source = "https://github.com/ansys/pyansys-tools-report"
 
 [tool.black]
 line-length = 100

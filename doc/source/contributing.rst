@@ -19,7 +19,7 @@ mode:
 
 .. code::
 
-    git clone https://github.com/pyansys/pyansys-tools-report.git
+    git clone https://github.com/ansys/pyansys-tools-report.git
     cd pyansys-tools-report
     pip install .
 
@@ -51,7 +51,7 @@ browser. To clean the documentation you can execute this command:
 
 Posting issues
 --------------
-Use the `PyAnsys Tools Report Issues <https://github.com/pyansys/pyansys-tools-report/issues>`_ page to
+Use the `PyAnsys Tools Report Issues <https://github.com/ansys/pyansys-tools-report/issues>`_ page to
 submit questions, report bugs, and request new features.
 
 

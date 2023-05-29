@@ -73,7 +73,7 @@ jobs:
     strategy:
       matrix:
           python-version: ['3.7', '3.8', '3.9', '3.10']
-          os: ['[self-hosted, Linux, pyansys-trainings]', '[self-hosted, Windows, pyansys-trainings]']
+          os: ['self-hosted, Linux, pyansys-trainings', 'self-hosted, Windows, pyansys-trainings']
     steps:
       - name: Run pytest
         uses: ansys/actions/tests-pytest@v4

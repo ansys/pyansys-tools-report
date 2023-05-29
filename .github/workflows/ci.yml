@@ -79,10 +79,12 @@ jobs:
       - name: "Install Git and clone project"
         uses: actions/checkout@v3
 
-      - name: "Set up Python"
-        uses: ansys/actions/_setup-python@main
+      - name: "Set up Python using cache"
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: 'pyproject.toml'
 
       - name: "Install Linux dependencies"
         if: runner.os == 'Linux'

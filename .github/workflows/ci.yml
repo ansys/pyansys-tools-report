@@ -80,7 +80,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get -y install libgl1
+          sudo apt-get -y install libgl1 libgl1-mesa-glx
 
       - name: Run pytest
         uses: ansys/actions/tests-pytest@v4

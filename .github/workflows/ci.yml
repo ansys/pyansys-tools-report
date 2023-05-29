@@ -68,7 +68,7 @@ jobs:
 
   tests:
     name: Testing
-    runs-on: [self-hosted, pyansys-trainings, "${{ matrix.os}}"]
+    runs-on: [self-hosted, pyansys-trainings, "${{ matrix.os }}"]
     needs: [smoke-tests]
     strategy:
       matrix:

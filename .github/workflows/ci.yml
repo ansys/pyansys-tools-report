@@ -76,17 +76,28 @@ jobs:
           python-version: ['3.7', '3.8', '3.9', '3.10']
           os: ['Linux', 'Windows']
     steps:
-      - name: Install Linux dependencies
+      - name: "Install Git and clone project"
+        uses: actions/checkout@v3
+
+      - name: "Set up Python"
+        uses: ansys/actions/_setup-python@main
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: "Install Linux dependencies"
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
           sudo apt-get -y install libgl1 libgl1-mesa-glx libxrender1
 
-      - name: Run pytest
-        uses: ansys/actions/tests-pytest@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-          pytest-extra-args: "--cov=${{ env.PACKAGE_NAMESPACE }} --cov-report=term --cov-report=xml:.cov/coverage.xml --cov-report=html:.cov/html"
+      - name: "Update pip"
+        run: python -m pip install -U pip
+
+      - name: "Install test dependencies"
+        run: python -m pip install .[tests]
+
+      - name: "Executing test suite"
+        run: pytest tests -vv --cov=${{ env.PACKAGE_NAMESPACE }} --cov-report=term --cov-report=xml:.cov/coverage.xml --cov-report=html:.cov/html
 
       - name: Upload coverage results (HTML)
         uses: actions/upload-artifact@v3

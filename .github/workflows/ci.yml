@@ -68,12 +68,12 @@ jobs:
 
   tests:
     name: Testing
-    runs-on: ${{ matrix.os }}
+    runs-on: [self-hosted, pyansys-trainings, "${{ matrix.os}}"]
     needs: [smoke-tests]
     strategy:
       matrix:
           python-version: ['3.7', '3.8', '3.9', '3.10']
-          os: ['self-hosted, Linux, pyansys-trainings', 'self-hosted, Windows, pyansys-trainings']
+          os: ['Linux', 'Windows']
     steps:
       - name: Run pytest
         uses: ansys/actions/tests-pytest@v4

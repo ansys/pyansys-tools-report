@@ -68,13 +68,10 @@ jobs:
 
   tests:
     name: Testing
-    runs-on:
-      group: pyansys-internal
-      labels: [self-hosted, ${{ matrix.os }}]
+    runs-on: [pyansys-tools-report-linux, pyansys-tools-report-windows]
     needs: [smoke-tests]
     strategy:
       matrix:
-          os: [Linux, Windows]
           python-version: ['3.7', '3.8', '3.9', '3.10']
     steps:
       - name: Run pytest

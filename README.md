@@ -106,7 +106,7 @@ this on an isolated system with a fresh python or on a virtual environment.
 For example, on Linux with Python 3.8, unzip it and install it with the following:
 
 ```bash
-   unzip pyansys-tools-report-v0.6.dev0-wheelhouse-Linux-3.8.zip wheelhouse
+   unzip pyansys-tools-report-v0.6.0-wheelhouse-Linux-3.8.zip wheelhouse
    pip install pyansys-tools-report -f wheelhouse --no-index --upgrade --ignore-installed
 ```
 

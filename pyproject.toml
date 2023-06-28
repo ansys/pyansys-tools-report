@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 # Check https://flit.readthedocs.io/en/latest/pyproject_toml.html for all available sections
 name = "pyansys-tools-report"
-version = "0.6.dev0"
+version = "0.6.0"
 dynamic = ["description"]
 readme = "README.md"
 requires-python = ">=3.8"

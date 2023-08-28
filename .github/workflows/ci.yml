@@ -21,6 +21,26 @@ concurrency:
 
 jobs:
 
+  check-vulnerabilities:
+    name: "Check library vulnerabilities"
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: "Check library vulnerabilities - development mode"
+        if: github.ref != 'refs/heads/main'
+        uses: ansys/actions/check-vulnerabilities@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          python-package-name: ${{ env.PACKAGE_NAME }}
+          dev-mode: true
+
+      - name: "Check library vulnerabilities - default mode"
+        if: github.ref == 'refs/heads/main'
+        uses: ansys/actions/check-vulnerabilities@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          python-package-name: ${{ env.PACKAGE_NAME }}
+
   docs-style:
     name: PyAnsys documentation style check
     runs-on: ubuntu-latest

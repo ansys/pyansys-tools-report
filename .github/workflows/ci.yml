@@ -30,7 +30,7 @@ jobs:
         if: github.ref != 'refs/heads/main'
         uses: ansys/actions/check-vulnerabilities@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SAFETY_TOKEN }}
           python-package-name: ${{ env.PACKAGE_NAME }}
           dev-mode: true
 
@@ -38,7 +38,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: ansys/actions/check-vulnerabilities@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SAFETY_TOKEN }}
           python-package-name: ${{ env.PACKAGE_NAME }}
 
   docs-style:

@@ -23,14 +23,13 @@ jobs:
 
   check-vulnerabilities:
     name: "Check library vulnerabilities"
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: "Check library vulnerabilities - development mode"
         if: github.ref != 'refs/heads/main'
         uses: ansys/actions/check-vulnerabilities@fix/vulnerabilities-action
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SAFETY_TOKEN }}
           python-package-name: 'pyansys-tools-report'
           dev-mode: true
 
@@ -38,7 +37,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: ansys/actions/check-vulnerabilities@fix/vulnerabilities-action
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SAFETY_TOKEN }}
           python-package-name: 'pyansys-tools-report'
 
   docs-style:

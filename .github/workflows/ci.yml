@@ -23,6 +23,7 @@ jobs:
 
   check-vulnerabilities:
     name: "Check library vulnerabilities"
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: "Check library vulnerabilities - development mode"

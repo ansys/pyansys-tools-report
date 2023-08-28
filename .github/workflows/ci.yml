@@ -29,7 +29,7 @@ jobs:
         if: github.ref != 'refs/heads/main'
         uses: ansys/actions/check-vulnerabilities@fix/vulnerabilities-action
         with:
-          token: ${{ '{{ secrets.GITHUB_TOKEN }}' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           python-package-name: 'pyansys-tools-report'
           dev-mode: true
 
@@ -37,7 +37,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: ansys/actions/check-vulnerabilities@fix/vulnerabilities-action
         with:
-          token: ${{ '{{ secrets.GITHUB_TOKEN }}' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           python-package-name: 'pyansys-tools-report'
 
   docs-style:

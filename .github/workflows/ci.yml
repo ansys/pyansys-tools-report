@@ -24,6 +24,7 @@ jobs:
   check-vulnerabilities:
     name: "Check library vulnerabilities"
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: "Check library vulnerabilities - development mode"
         if: github.ref != 'refs/heads/main'

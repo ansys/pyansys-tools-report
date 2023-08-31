@@ -8,7 +8,7 @@
 [![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat)](https://github.com/psf/black)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ansys/pyansys-tools-report/main.svg)](https://results.pre-commit.ci/latest/github/ansys/pyansys-tools-report/main)
-
+A Python environment reporting tool specifically tailored for PyAnsys package versions and hardware resources in a standardized way.
 Python environment reporting tool specifically tailored for PyAnsys package versions and hardware resources in a standardized way.
 
 ## Table of contents

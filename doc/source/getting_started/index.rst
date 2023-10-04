@@ -11,7 +11,7 @@ Installation
 This package may be installed following two procedures: either the pip package manager installation or
 the manual installation. The process to be followed for each of them is shown in the upcoming sections.
 
-The ``pyansys-tools-report`` package currently supports Python >=3.8 on Windows, Mac OS, and Linux.
+The ``pyansys-tools-report`` package currently supports Python >=3.9 on Windows, Mac OS, and Linux.
 
 Install the latest release from `PyPi <https://pypi.org/project/pyansys-tools-report>`_ with:
 
@@ -44,14 +44,14 @@ of installing PyAnsys Tools Report is downloading the wheelhouse archive from th
 corresponding machine architecture.
 
 Each wheelhouse archive contains all the python wheels necessary to install
-PyAnsys Tools Report from scratch on Windows and Linux for Python >=3.8. You can install
+PyAnsys Tools Report from scratch on Windows and Linux for Python >=3.9. You can install
 this on an isolated system with a fresh python or on a virtual environment.
 
-For example, on Linux with Python 3.8, unzip it and install it with the following:
+For example, on Linux with Python 3.9, unzip it and install it with the following:
 
 .. code:: bash
 
-   unzip pyansys-tools-report-v0.7.dev0-wheelhouse-Linux-3.8.zip wheelhouse
+   unzip pyansys-tools-report-v0.7.dev0-wheelhouse-Linux-3.9.zip wheelhouse
    pip install pyansys-tools-report -f wheelhouse --no-index --upgrade --ignore-installed
 
 

@@ -8,7 +8,7 @@ on:
       - main
 
 env:
-  MAIN_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.11'
   PACKAGE_NAME: 'pyansys-tools-report'
   PACKAGE_NAMESPACE: 'ansys.tools.report'
   DOCUMENTATION_CNAME: 'report.tools.docs.pyansys.com'

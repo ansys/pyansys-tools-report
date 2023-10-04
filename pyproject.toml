@@ -27,7 +27,6 @@ classifiers = [
 ]
 dependencies = [
     "setuptools>=65.5.1",
-    "importlib-metadata >=4.12.0",
     "scooby>=0.5.12",
     "pyvista>=0.34.1",
 ]

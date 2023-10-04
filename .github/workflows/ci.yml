@@ -57,14 +57,13 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: ['3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.9', '3.10', '3.11', '3.12']
 
     steps:
       - name: Build wheelhouse and perform smoke test
         uses: ansys/actions/build-wheelhouse@v4
         with:
           library-name: ${{ env.PACKAGE_NAME }}
-          library-namespace: ${{ env.PACKAGE_NAMESPACE }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
 
@@ -75,14 +74,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.9', '3.10', '3.11', '3.12']
 
     steps:
       - name: Build wheelhouse and perform smoke test
         uses: ansys/actions/build-wheelhouse@v4
         with:
           library-name: ${{ env.PACKAGE_NAME }}
-          library-namespace: ${{ env.PACKAGE_NAMESPACE }}
           operating-system: ${{ runner.os }}
           python-version: ${{ matrix.python-version }}
 
@@ -93,7 +91,7 @@ jobs:
     strategy:
       matrix:
           os: [ubuntu-latest, windows-latest]
-          python-version: ['3.8', '3.9', '3.10', '3.11']
+          python-version: ['3.9', '3.10', '3.11', '3.12']
     steps:
       - name: Run pytest
         uses: ansys/actions/tests-pytest@v4
@@ -178,4 +176,3 @@ jobs:
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}

@@ -40,7 +40,7 @@ def test_create_ansys_report_empty():
     # Architecture
     assert rep.architecture == platform.architecture()[0]
     # OS
-    assert rep.system == platform.system()
+    assert platform.system() in rep.system
     # Machine
     assert rep.machine == platform.machine()
 

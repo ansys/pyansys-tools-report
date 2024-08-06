@@ -41,7 +41,7 @@ doc = [
     "numpydoc==1.7.0",
     "Sphinx==8.0.2",
     "Sphinx-copybutton==0.5.2",
-    "myst-parser==3.0.1",
+    "myst-parser==4.0.0",
 ]
 
 [tool.flit.module]

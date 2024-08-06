@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /version/0.6
+Disallow: /version/0.5
+
+Sitemap: https://report.tools.docs.pyansys.com/sitemap.xml

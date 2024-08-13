@@ -7,7 +7,6 @@ from ansys_sphinx_theme import (
     ansys_logo_white,
     ansys_logo_white_cropped,
     get_version_match,
-    pyansys_logo_black,
     watermark,
 )
 from ansys_sphinx_theme.latex import generate_preamble
@@ -25,13 +24,13 @@ author = "ANSYS, Inc."
 release = version = __version__
 cname = os.getenv("DOCUMENTATION_CNAME", default="nocname.com")
 
-# use the default pyansys logo
-html_logo = pyansys_logo_black
+# use the default theme
 html_theme = "ansys_sphinx_theme"
 
 # specify the location of your github repo
 html_short_title = html_title = "PyAnsys Tools Report"
 html_theme_options = {
+    "logo": "pyansys",
     "switcher": {
         "json_url": f"https://{cname}/versions.json",
         "version_match": get_version_match(__version__),

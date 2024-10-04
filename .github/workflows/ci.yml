@@ -67,7 +67,7 @@ jobs:
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
           check-licenses: true
-          whitelist-license-check: 'PyQt5'
+          whitelist-license-check: 'PyQt5, PyQt5_sip'
 
   smoke-tests-macos:
     name: Build and smoke tests (macOS)

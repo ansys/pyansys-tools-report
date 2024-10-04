@@ -28,6 +28,7 @@ dependencies = [
     "setuptools>=65.5.1",
     "scooby>=0.5.12",
     "pyvista>=0.34.1",
+    "PyQt5",
 ]
 
 [project.optional-dependencies]

@@ -61,11 +61,13 @@ jobs:
 
     steps:
       - name: Build wheelhouse and perform smoke test
-        uses: ansys/actions/build-wheelhouse@v7
+        uses: ansys/actions/build-wheelhouse@feat/whitelist-packages
         with:
           library-name: ${{ env.PACKAGE_NAME }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
+          check-licenses: true
+          whitelist-license-check: ''
 
   smoke-tests-macos:
     name: Build and smoke tests (macOS)

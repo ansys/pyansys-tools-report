@@ -120,3 +120,7 @@ myst_heading_anchors = 3
 # Generate the LaTeX preamble
 latex_additional_files = [watermark, ansys_logo_white, ansys_logo_white_cropped]
 latex_elements = {"preamble": generate_preamble(html_title)}
+
+linkcheck_ignore = [
+    "https://opensource.org/licenses/MIT",
+]

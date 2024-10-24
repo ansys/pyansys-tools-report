@@ -147,11 +147,11 @@ class Report(scooby.Report):
         # bug that the user is trying to report.
         if gpu:
             try:
-                from pyvista.report import GPUInfo
-            except ImportError:
-                from pyvista.utilities.errors import GPUInfo  # deprecated in Pyvista 0.40
+                try:
+                    from pyvista.report import GPUInfo
+                except ImportError:
+                    from pyvista.utilities.errors import GPUInfo  # deprecated in Pyvista 0.40
 
-            try:
                 extra_meta = [(t[0], t[1]) for t in GPUInfo().get_info()]
             except:
                 extra_meta = ("GPU Details", "error")

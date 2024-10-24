@@ -150,7 +150,7 @@ class Report(scooby.Report):
                 try:
                     from pyvista.report import GPUInfo
                 except ImportError:
-                    from pyvista.utilities.errors import GPUInfo  # deprecated in Pyvista 0.40
+                    from pyvista.utilities.errors import GPUInfo  # deprecated in PyVista 0.40
 
                 extra_meta = [(t[0], t[1]) for t in GPUInfo().get_info()]
             except:

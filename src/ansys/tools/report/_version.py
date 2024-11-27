@@ -25,6 +25,7 @@ PyAnsys Tools Report version module.
 
 Module containing the version function for .
 """
+
 import importlib.metadata as importlib_metadata
 
 __version__ = importlib_metadata.version("pyansys-tools-report")

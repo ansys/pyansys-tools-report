@@ -142,7 +142,7 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - name: Automerge PRs
-        uses: ansys/actions/hk-automerge-prs@feat/automerge-prs
+        uses: ansys/actions/hk-automerge-prs@main
         with:
           approver: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
           approver-token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}

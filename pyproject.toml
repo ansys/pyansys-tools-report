@@ -39,7 +39,7 @@ tests = [
     "scooby==0.10.0",
 ]
 doc = [
-    "ansys_sphinx_theme==1.2.3",
+    "ansys_sphinx_theme==1.2.4",
     "pyvista==0.44.1",
     "myst-parser==4.0.0",
     "numpydoc==1.8.0",

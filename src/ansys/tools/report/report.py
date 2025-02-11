@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -25,6 +25,7 @@ PyAnsys Tools Report.
 
 Module containing the standardized Report class for PyAnsys projects.
 """
+
 import os
 import sys
 
@@ -153,7 +154,7 @@ class Report(scooby.Report):
                     from pyvista.utilities.errors import GPUInfo  # deprecated in PyVista 0.40
 
                 extra_meta = [(t[0], t[1]) for t in GPUInfo().get_info()]
-            except:
+            except Exception:
                 extra_meta = ("GPU Details", "error")
         else:
             extra_meta = ("GPU Details", "None")

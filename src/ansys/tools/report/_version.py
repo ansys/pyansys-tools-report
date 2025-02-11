@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -25,6 +25,7 @@ PyAnsys Tools Report version module.
 
 Module containing the version function for .
 """
+
 import importlib.metadata as importlib_metadata
 
 __version__ = importlib_metadata.version("pyansys-tools-report")

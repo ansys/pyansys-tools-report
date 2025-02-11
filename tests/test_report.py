@@ -1,4 +1,4 @@
-# Copyright (C) 2022 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2022 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -29,7 +29,6 @@ import ansys.tools.report as report
 
 def test_create_ansys_report_empty():
     """Test the creation of a Report and its correct output."""
-
     # Instantiate a "default" Report
     rep = report.Report()
 
@@ -65,8 +64,8 @@ None"""
 
 def test_create_ansys_report_with_libs():
     """Test the creation of a Report and its correct output
-    when imaginary Ansys libraries are provided."""
-
+    when imaginary Ansys libraries are provided.
+    """
     # Let us imagine some ansys libraries
     my_ansys_libs = {
         "MyLib1": "v1.2",
@@ -100,8 +99,8 @@ None"""
 
 def test_create_ansys_report_with_vars():
     """Test the creation of a Report and its correct output
-    when imaginary Ansys variables are provided."""
-
+    when imaginary Ansys variables are provided.
+    """
     # Let us imagine some ansys variables
     os.environ["MYVAR_1"] = "VAL_1"
     os.environ["MYVAR_2"] = "VAL_2"
@@ -132,8 +131,8 @@ MYVAR_2                        VAL_2"""
 
 def test_create_ansys_report_with_libs_and_vars():
     """Test the creation of a Report and its correct output
-    when imaginary Ansys libraries and variables are provided."""
-
+    when imaginary Ansys libraries and variables are provided.
+    """
     # Let us imagine some ansys libraries
     my_ansys_libs = {
         "MyLib1": "v1.2",
@@ -173,8 +172,8 @@ MYVAR_2                        VAL_2"""
 
 def test_create_ansys_repr():
     """Test the creation of a Report and its correct output
-    when directly calling the object."""
-
+    when directly calling the object.
+    """
     # Let us start by creating a "default" Report
     str_rep = report.Report().__repr__()
 
@@ -196,8 +195,8 @@ def test_create_ansys_report_with_def_vars():
     default vars are expected. And it is also testing when a
     default var is provided specifically, if it is not printed twice.
 
-    Also, gpu set to False is tested, for coverage reasons."""
-
+    Also, gpu set to False is tested, for coverage reasons.
+    """
     # Let us imagine some ansys variables
     os.environ["MYVAR_1"] = "VAL_1"
     os.environ["MYVAR_2"] = "VAL_2"
@@ -233,8 +232,8 @@ FLUENT_VAR1                    FL_VAL_1"""
 def test_create_ansys_report_with_no_vars():
     """Test the creation of a Report and its correct output
     when no Ansys variables are provided. In this case,
-    default vars are expected, even though none are provided."""
-
+    default vars are expected, even though none are provided.
+    """
     # Let us imagine  "default" ansys variables
     os.environ["FLUENT_VAR1"] = "FL_VAL_1"
     os.environ["FLUENT_VAR2"] = "FL_VAL_2"

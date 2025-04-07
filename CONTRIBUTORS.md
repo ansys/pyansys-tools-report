@@ -6,7 +6,7 @@
 
 ## Individual Contributors
 
+* [German](https://github.com/germa89)
+* [Jorge Martínez](https://github.com/jorgepiloto)
 * [Maxime Rey](https://github.com/MaxJPRey)
-* [Jorge Martínez Garrido](https://github.com/jorgepiloto)
-* [Germán Martínez Ayuso](https://github.com/germa89)
 * [Revathy Venugopal](https://github.com/Revathyvenugopal162)

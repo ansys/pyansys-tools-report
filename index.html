@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./version/stable/" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PyAnsys Tools Report &#8212; PyAnsys Tools Report</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="version/stable/_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="version/stable/_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="version/stable/_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="version/stable/_static/styles/ansys-sphinx-theme.css?v=300e4a82" />
+    <link rel="stylesheet" type="text/css" href="version/stable/_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="version/stable/_static/styles/ansys-sphinx-theme.css?v=300e4a82" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="version/stable/_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="version/stable/_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="version/stable/_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="version/stable/_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="version/stable/_static/documentation_options.js?v=ec54a975"></script>
+    <script src="version/stable/_static/doctools.js?v=9bcbadda"></script>
+    <script src="version/stable/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="version/stable/_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="version/stable/_static/copybutton.js?v=49e1bf35"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://report.tools.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.8';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="version/stable/_static/favicon.png"/>
+    <link rel="index" title="Index" href="version/stable/genindex.html" />
+    <link rel="search" title="Search" href="version/stable/search.html" />
+    <link rel="next" title="API reference" href="version/stable/api/index.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.8.3" />
+  <link rel="canonical" href="https://report.tools.docs.pyansys.com/">
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="version/stable/#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="version/stable/search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="https://docs.pyansys.com/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="version/stable/_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="PyAnsys Tools Report - Home"/>
+    <img src="version/stable/_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="PyAnsys Tools Report - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/#">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/contributing.html">
+    Contributing
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="version/stable/search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyansys-tools-report" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/#">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/api/index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="version/stable/contributing.html">
+    Contributing
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="version/stable/search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyansys-tools-report" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="version/stable/#"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pyansys-tools-report">
+<h1>PyAnsys Tools Report<a class="headerlink" href="version/stable/#pyansys-tools-report" title="Link to this heading">#</a></h1>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="version/stable/#contents" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="version/stable/api/index.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/api/index.html#ansys.tools.report.Report"><code class="docutils literal notranslate"><span class="pre">Report</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="version/stable/api/index.html#ansys.tools.report.Report.project_info"><code class="docutils literal notranslate"><span class="pre">Report.project_info()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/api/index.html#ansys.tools.report.version"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="version/stable/getting_started/index.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/getting_started/index.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/getting_started/index.html#offline-installation">Offline installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/getting_started/index.html#how-does-it-work">How does it work?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="version/stable/user_guide/index.html">User guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/user_guide/index.html#using-pyansys-tools-report">Using PyAnsys Tools Report</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="version/stable/contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/contributing.html#cloning-the-pyansys-tools-report-repository">Cloning the PyAnsys Tools Report repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/contributing.html#building-documentation">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/contributing.html#posting-issues">Posting issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version/stable/contributing.html#code-style">Code style</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="readme-file">
+<h2>README file<a class="headerlink" href="version/stable/#readme-file" title="Link to this heading">#</a></h2>
+<p>Find here below the contents of the repository’s main README file.</p>
+<section id="pyansys-tools-report">
+<h3>PyAnsys Tools Report<a class="headerlink" href="version/stable/#pyansys-tools-report" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://docs.pyansys.com/"><img alt="PyAnsys" src="https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC" /></a>
+<a class="reference external" href="https://pypi.org/project/pyansys-tools-report/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/pyansys-tools-report?logo=pypi" /></a>
+<a class="reference external" href="https://pypi.org/project/pyansys-tools-report"><img alt="PyPI" src="https://img.shields.io/pypi/v/pyansys-tools-report.svg?logo=python&amp;logoColor=white" /></a>
+<a class="reference external" href="https://codecov.io/gh/ansys/pyansys-tools-report"><img alt="codecov" src="https://codecov.io/gh/ansys/pyansys-tools-report/branch/main/graph/badge.svg" /></a>
+<a class="reference external" href="https://github.com/ansys/pyansys-tools-report/actions/workflows/ci.yml"><img alt="GH-CI" src="https://github.com/ansys/pyansys-tools-report/actions/workflows/ci.yml/badge.svg" /></a>
+<a class="reference external" href="https://opensource.org/licenses/MIT"><img alt="MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
+<a class="reference external" href="https://github.com/astral-sh/ruff"><img alt="Ruff" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" /></a>
+<a class="reference external" href="https://results.pre-commit.ci/latest/github/ansys/pyansys-tools-report/main"><img alt="pre-commit.ci status" src="https://results.pre-commit.ci/badge/github/ansys/pyansys-tools-report/main.svg" /></a></p>
+<p>Ansys tool for reporting your Python environment’s package versions and hardware resources in a standardized way.</p>
+<section id="table-of-contents">
+<h4>Table of contents<a class="headerlink" href="version/stable/#table-of-contents" title="Link to this heading">#</a></h4>
+<!--ts-->
+<ul class="simple">
+<li><p><a class="reference internal" href="version/stable/#pyansys-tools-report">PyAnsys Tools Report</a></p>
+<ul>
+<li><p><a class="reference internal" href="version/stable/#table-of-contents">Table of contents</a></p></li>
+<li><p><a class="reference internal" href="version/stable/#introduction">Introduction</a></p></li>
+<li><p><a class="reference internal" href="version/stable/#documentation-and-issues">Documentation and issues</a></p></li>
+<li><p><a class="reference internal" href="version/stable/#how-does-it-work">How does it work?</a></p></li>
+<li><p><a class="reference internal" href="version/stable/#installation">Installation</a></p>
+<ul>
+<li><p><a class="reference internal" href="version/stable/#standard-installation">Standard installation</a></p></li>
+<li><p><a class="reference internal" href="version/stable/#offline-installation">Offline installation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="version/stable/#rendering-the-docs">Rendering the docs</a></p></li>
+<li><p><a class="reference internal" href="version/stable/#running-the-tests">Running the tests</a></p></li>
+<li><p><a class="reference internal" href="version/stable/#requirements">Requirements</a></p></li>
+</ul>
+</li>
+</ul>
+<!--te-->
+</section>
+<section id="introduction">
+<h4>Introduction<a class="headerlink" href="version/stable/#introduction" title="Link to this heading">#</a></h4>
+<p>The PyAnsys Tools Report is a PyAnsys package to homogenize among all the different repositories
+the output of system and environment reports related to Ansys products. Its main goals are:</p>
+<ul class="simple">
+<li><p>Provide an homogeneous output style to system and environment reports.</p></li>
+<li><p>Allows for customization when reporting Ansys variables and libraries.</p></li>
+</ul>
+<p>You are welcome to help contribute to it in any possible way. Please submit an issue with
+any proposal you may have.</p>
+</section>
+<section id="documentation-and-issues">
+<h4>Documentation and issues<a class="headerlink" href="version/stable/#documentation-and-issues" title="Link to this heading">#</a></h4>
+<p>See the <a class="reference external" href="https://report.tools.docs.pyansys.com/">documentation</a> page for more details.</p>
+<p>You are welcome to help contribute to it in any possible way. Please submit
+<a class="reference external" href="https://github.com/ansys/pyansys-tools-report/issues">here</a> an issue with
+any proposal you may have. This is the best place to post questions and code.</p>
+</section>
+<section id="how-does-it-work">
+<h4>How does it work?<a class="headerlink" href="version/stable/#how-does-it-work" title="Link to this heading">#</a></h4>
+<p>This repository basically contains a simple Python package which you can import as follows
+(once installed):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ansys.tools.report</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pyansys_report</span>
+</pre></div>
+</div>
+<p>Once imported, you can then start playing around with it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate a &quot;default&quot; Report</span>
+<span class="n">rep</span> <span class="o">=</span> <span class="n">pyansys_report</span><span class="o">.</span><span class="n">Report</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Refer to the <a class="reference external" href="https://report.tools.docs.pyansys.com/">online documentation</a> to see the details of the module.</p>
+</section>
+<section id="installation">
+<h4>Installation<a class="headerlink" href="version/stable/#installation" title="Link to this heading">#</a></h4>
+<p>This package may be installed following two procedures: either the pip package manager installation or
+the manual installation. The process to be followed for each of them is shown in the upcoming sections.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyansys-tools-report</span></code> package currently supports Python &gt;=3.10 on Windows, Mac OS, and Linux.</p>
+<section id="standard-installation">
+<h5>Standard installation<a class="headerlink" href="version/stable/#standard-installation" title="Link to this heading">#</a></h5>
+<p>Install the latest release from <a class="reference external" href="https://pypi.org/project/pyansys-tools-report">PyPi</a> with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>pip<span class="w"> </span>install<span class="w"> </span>pyansys-tools-report
+</pre></div>
+</div>
+<p>Alternatively, install the latest from GitHub via:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/ansys/pyansys-tools-report.git
+</pre></div>
+</div>
+<p>For a local “development” version, install with (requires pip &gt;= 22.0):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ansys/pyansys-tools-report.git
+<span class="w">   </span><span class="nb">cd</span><span class="w"> </span>pyansys-tools-report
+<span class="w">   </span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="offline-installation">
+<h5>Offline installation<a class="headerlink" href="version/stable/#offline-installation" title="Link to this heading">#</a></h5>
+<p>If you lack an internet connection on your install machine, the recommended way
+of installing PyAnsys Tools Report is downloading the wheelhouse archive from the
+<a class="reference external" href="https://github.com/ansys/pyansys-tools-report/releases">Releases Page</a> for your
+corresponding machine architecture.</p>
+<p>Each wheelhouse archive contains all the python wheels necessary to install
+PyAnsys Tools Report from scratch on Windows and Linux for Python &gt;=3.10. You can install
+this on an isolated system with a fresh python or on a virtual environment.</p>
+<p>For example, on Linux with Python 3.10, unzip it and install it with the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>unzip<span class="w"> </span>pyansys-tools-report-v0.8.3-wheelhouse-Linux-3.10.zip<span class="w"> </span>wheelhouse
+<span class="w">   </span>pip<span class="w"> </span>install<span class="w"> </span>pyansys-tools-report<span class="w"> </span>-f<span class="w"> </span>wheelhouse<span class="w"> </span>--no-index<span class="w"> </span>--upgrade<span class="w"> </span>--ignore-installed
+</pre></div>
+</div>
+<p>If you’re on Windows with Python 3.10, unzip to a <code class="docutils literal notranslate"><span class="pre">wheelhouse</span></code> directory and
+install using the same command as before.</p>
+<p>Consider installing using a <a class="reference external" href="https://docs.python.org/3/library/venv.html">virtual environment</a>.
+More information on general PyAnsys development can be found in the
+<a class="reference external" href="https://dev.docs.pyansys.com/">PyAnsys Developer’s Guide</a>.</p>
+</section>
+</section>
+<section id="rendering-the-docs">
+<h4>Rendering the docs<a class="headerlink" href="version/stable/#rendering-the-docs" title="Link to this heading">#</a></h4>
+<p>In case you were interested in rendering the docs locally, you need to clone the repository and
+install the docs requirements first:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ansys/pyansys-tools-report.git
+<span class="w">   </span><span class="nb">cd</span><span class="w"> </span>pyansys-tools-report
+<span class="w">   </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>doc<span class="o">]</span>
+</pre></div>
+</div>
+<p>Once you have the requirements, render the docs by running the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>make<span class="w"> </span>-C<span class="w"> </span>doc<span class="w"> </span>html
+</pre></div>
+</div>
+<p>This generates the HTML version of the docs, which you may find in the following directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="nb">cd</span><span class="w"> </span>doc/_build/html
+</pre></div>
+</div>
+<p>You can also clean the build directory by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>make<span class="w"> </span>-C<span class="w"> </span>doc<span class="w"> </span>clean
+</pre></div>
+</div>
+</section>
+<section id="running-the-tests">
+<h4>Running the tests<a class="headerlink" href="version/stable/#running-the-tests" title="Link to this heading">#</a></h4>
+<p>In case you were interested in running the tests locally, you need to clone the repository and
+install the test requirements first:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ansys/pyansys-tools-report.git
+<span class="w">   </span><span class="nb">cd</span><span class="w"> </span>pyansys-tools-report
+<span class="w">   </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>test<span class="o">]</span>
+</pre></div>
+</div>
+<p>Once you have the requirements, run the tests by running the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>pytest
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file already contains some default configuration for running the tests. Please,
+take a look at it if you may want to run it with your own configuration.</p>
+</section>
+<section id="requirements">
+<h4>Requirements<a class="headerlink" href="version/stable/#requirements" title="Link to this heading">#</a></h4>
+<p>This Python package does not contain specific requirements files. Instead, its requirements may
+be found within the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file which defines the package. Thus, when the package is
+installed it automatically detects the dependencies needed and installs them.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#contents">Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#readme-file">README file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#pyansys-tools-report">PyAnsys Tools Report</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#table-of-contents">Table of contents</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#introduction">Introduction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#documentation-and-issues">Documentation and issues</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#how-does-it-work">How does it work?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#standard-installation">Standard installation</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#offline-installation">Offline installation</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#rendering-the-docs">Rendering the docs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#running-the-tests">Running the tests</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="version/stable/#requirements">Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<!-- If there is no fix edit button function, use the PyData edit-this-button-->
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="version/stable/_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="version/stable/_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="version/stable/_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "version/stable/_static/search.json";
+const ADVANCE_SEARCH_PATH = "version/stable/search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="version/stable/_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.6.0. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
